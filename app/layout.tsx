@@ -16,12 +16,11 @@ export const metadata: Metadata = {
 		{ name: 'Bryan Espinosa' },
 		{
 			name: 'Bryan Espinosa',
-			url: '+5358505864',
 		},
 	],
 	icons: [
-		{ rel: 'apple-touch-icon', url: '/public/icons/calculadora 64x64.png' },
-		{ rel: 'icon', url: '/public/icons/calculadora 180x180.png' },
+		{ rel: 'apple-touch-icon', url: '/icons/calculadora 64x64.png' },
+		{ rel: 'icon', url: '/icons/calculadora 180x180.png' },
 	],
 };
 export const viewport: Viewport = {
