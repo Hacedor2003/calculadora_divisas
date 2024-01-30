@@ -13,6 +13,12 @@
       "type": "image/png",
       "purpose": "maskable any"
     },
+  {
+      "src": "icons/calculadora 144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
     {
       "src": "icons/calculadora 180x180.png",
       "sizes": "180x180",
