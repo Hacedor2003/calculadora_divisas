@@ -1,0 +1,76 @@
+.Main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 40, 45);
+}
+
+.Main>section {
+  margin: 4vh;
+  height: 75vh;
+}
+
+.barraNavegacion {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  padding: 2vh;
+  width: 56vw;
+  background-color: rgb(0, 78, 88);
+}
+
+.Card {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vh;
+}
+
+.Card>section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Card>section>p {
+  margin-left: 15px;
+}
+
+.Card>section>img {
+  border-radius: 100%;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  padding: 2vh;
+  width: 56vw;
+  background-color: rgb(0, 78, 88);
+}
+
+.Article {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 10px;
+  width: 40vw;
+  background-color: rgb(0, 78, 88);
+  margin-top: 2vh;
+  padding: 2vh 1vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Article>input {
+  background: none;
+  width: 10vh;
+}
