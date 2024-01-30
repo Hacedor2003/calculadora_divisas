@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<section>
 			<Image
-				src='/public/Logo.jpg'
+				src='/Logo.jpg'
 				alt='Foto:Logo'
 				width={500}
 				height={500}
