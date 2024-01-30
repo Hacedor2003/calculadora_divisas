@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 		},
 	],
 	icons: [
-		{ rel: 'apple-touch-icon', url: '/icons/calculadora 64x64.png' },
-		{ rel: 'icon', url: '/icons/calculadora 180x180.png' },
+		{ rel: 'apple-touch-icon', url: '/calculadora 64x64.png' },
+		{ rel: 'icon', url: '/calculadora 180x180.png' },
 	],
 };
 export const viewport: Viewport = {

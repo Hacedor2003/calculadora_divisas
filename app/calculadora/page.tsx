@@ -21,17 +21,17 @@ export default function Page() {
 			<section>
 				<Card
 					dinero={`${valor * 280}`}
-					image='/icons/usa.webp'
+					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
 					dinero={`${valor * 270}`}
-					image='/icons/euro.webp'
+					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
 					dinero={`${valor * 240}`}
-					image='/icons/mlc.jpeg'
+					image='/mlc.jpeg'
 					moneda='MLC'
 				/>
 			</section>

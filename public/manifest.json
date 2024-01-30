@@ -8,30 +8,30 @@
   "scope": "/",
   "start_url": "/",
   "icons": [{
-      "src": "icons/calculadora 64x64.png",
+      "src": "calculadora 64x64.png",
       "sizes": "64x64",
       "type": "image/png",
       "purpose": "maskable any"
     },
   {
-      "src": "icons/calculadora 144x144.png",
+      "src": "calculadora 144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "icons/calculadora 180x180.png",
+      "src": "calculadora 180x180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "icons/calculadora 192x192.png",
+      "src": "calculadora 192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "icons/calculadora 512x512.png",
+      "src": "calculadora 512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"

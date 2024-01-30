@@ -8,17 +8,17 @@ export default function Page() {
 			<section>
 				<Card
 					dinero='285'
-					image='/icons/usa.webp'
+					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
 					dinero='290'
-					image='/icons/euro.webp'
+					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
 					dinero='252'
-					image='/icons/mlc.jpeg'
+					image='/mlc.jpeg'
 					moneda='MLC'
 				/>
 			</section>
