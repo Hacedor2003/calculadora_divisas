@@ -2,10 +2,10 @@
 import { useContext, useState, useEffect } from 'react';
 import { Card } from '../UI/Card';
 import estilos from '../estilos.module.css';
-import {  ContextData } from '../Components/ContextProvider';
+import { ContextData } from '../Components/ContextProvider';
 
 export default function Page() {
-	const  moneda  = useContext(ContextData);
+	const moneda = useContext(ContextData);
 	const [valor, setValor] = useState(1);
 
 	return (
@@ -22,17 +22,17 @@ export default function Page() {
 			</article>
 			<section>
 				<Card
-					dinero={`${moneda ? valor * moneda.usd : 'Cargando'}`}
+					dinero={`${moneda ? (valor * moneda.usd).toFixed(2) : 'Cargando'}`}
 					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
-					dinero={`${moneda ? valor * moneda.euro : 'Cargando'}`}
+					dinero={`${moneda ? (valor * moneda.euro).toFixed(2) : 'Cargando'}`}
 					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
-					dinero={`${moneda ? valor * moneda.mlc : 'Cargando'}`}
+					dinero={`${moneda ? (valor * moneda.mlc).toFixed(2) : 'Cargando'}`}
 					image='/mlc.jpeg'
 					moneda='MLC'
 				/>

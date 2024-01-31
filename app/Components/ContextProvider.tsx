@@ -1,11 +1,12 @@
-'use client';
+'use client'
 import React, { createContext, useEffect, useState } from 'react';
 import { FetchingApi } from './FecthingApi';
 
-export const ContextData = createContext(0);
+type ContextType = { usd: any; euro: any; mlc: any } | undefined;
+export const ContextData = createContext<ContextType>(undefined);
 
-export function ContextProvider({ children }: { children: any }) {
-	const [contexto, setContexto] = useState(null);
+export function ContextProvider({ children }: { children: React.ReactNode }) {
+	const [contexto, setContexto] = useState<ContextType>(undefined);
 
 	useEffect(() => {
 		const fetchData = async () => {
