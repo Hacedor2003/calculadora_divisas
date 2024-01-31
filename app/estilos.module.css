@@ -50,7 +50,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 1vh;
-  background-color: #8e88b5;
+  background-color: rgb(4, 70, 70);
   padding: 2vh;
   border: 1px solid #0c0b20;
   border-radius: 18px;
@@ -62,7 +62,7 @@
 }
 
 .Card:hover {
-  background-color: rgb(4, 70, 70);
+  background-color: rgb(4, 44, 44);
   border: 1px solid black;
 }
 
@@ -123,5 +123,8 @@
 
 .Article>input {
   background: none;
-  width: 10vh;
+  width: 88%;
+  border: 2px dotted black;
+  margin-left: 0.5vw;
+  padding: 5px;
 }
