@@ -1,23 +1,27 @@
+'use client';
+import { useContext } from 'react';
 import { Card } from '../UI/Card';
-import estilos from '../estilos.module.css'
+import estilos from '../estilos.module.css';
+import { ContextData } from '../Components/ContextProvider';
 
 export default function Page() {
+	const  moneda  = useContext(ContextData);
 	return (
 		<>
-			<header className={estilos.Header}>Tasa de Oculos Reparo</header>
+			<header className={estilos.Header}>Tasa de Oculus Reparo</header>
 			<section>
 				<Card
-					dinero='285'
+					dinero={moneda ? moneda.usd + 10 : 'Cargando'}
 					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
-					dinero='290'
+					dinero={moneda ? moneda.usd + 10 : 'Cargando'}
 					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
-					dinero='252'
+					dinero={moneda ? moneda.usd + 10 : 'Cargando'}
 					image='/mlc.jpeg'
 					moneda='MLC'
 				/>

@@ -1,10 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Card } from '../UI/Card';
 import estilos from '../estilos.module.css';
+import {  ContextData } from '../Components/ContextProvider';
 
 export default function Page() {
-	const [valor, setValor] = useState(0);
+	const  moneda  = useContext(ContextData);
+	const [valor, setValor] = useState(1);
 
 	return (
 		<>
@@ -15,22 +17,22 @@ export default function Page() {
 					type='number'
 					id='calculadora'
 					value={valor}
-					onChange={(e) => setValor(e.target.valueAsNumber)}
+					onChange={(e) => setValor(e.target.valueAsNumber || 1)}
 				/>
 			</article>
 			<section>
 				<Card
-					dinero={`${valor * 280}`}
+					dinero={`${moneda ? valor * moneda.usd : 'Cargando'}`}
 					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
-					dinero={`${valor * 270}`}
+					dinero={`${moneda ? valor * moneda.euro : 'Cargando'}`}
 					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
-					dinero={`${valor * 240}`}
+					dinero={`${moneda ? valor * moneda.mlc : 'Cargando'}`}
 					image='/mlc.jpeg'
 					moneda='MLC'
 				/>

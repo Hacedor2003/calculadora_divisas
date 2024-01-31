@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { BarraNavegacion } from './UI/BarraNavegacion';
 import estilos from './estilos.module.css';
+import { ContextProvider } from './Components/ContextProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,7 +39,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<main className={estilos.Main}>
-					{children}
+					<ContextProvider>{children}</ContextProvider>
 					<BarraNavegacion />
 				</main>
 			</body>
