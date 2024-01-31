@@ -14,9 +14,11 @@ export const Card = ({ image, moneda, dinero, dinero2, dinero3 }: { image: strin
 				/>
 				<p>{moneda}</p>
 			</section>
-			<p>{dinero ? dinero : null}</p>
-			<p>{dinero2 ? dinero2 : null}</p>
-			<p>{dinero3 ? dinero3 : null}</p>
+			<aside>
+				<p>{dinero ? dinero : null}</p>
+				<p>{dinero2 ? dinero2 : null}</p>
+				<p>{dinero3 ? dinero3 : null}</p>
+			</aside>
 		</div>
 	);
 };

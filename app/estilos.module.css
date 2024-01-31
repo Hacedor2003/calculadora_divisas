@@ -37,7 +37,7 @@
 }
 
 .barraNavegacion>button:hover {
-    background-color: rgb(5, 48, 54);
+  background-color: rgb(5, 48, 54);
 }
 
 .Card {
@@ -78,6 +78,21 @@
 
 .Card>section>img {
   border-radius: 100%;
+}
+
+.Card>aside {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2vw;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.Card>aside>p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
 }
 
 .Header {
