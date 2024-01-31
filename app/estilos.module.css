@@ -11,6 +11,7 @@
 .Main>section {
   margin: 4vh;
   height: 75vh;
+  overflow: overlay;
 }
 
 .barraNavegacion {
@@ -49,7 +50,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 1vh;
-  background-color: #281e62;
+  background-color: #8e88b5;
   padding: 2vh;
   border: 1px solid #0c0b20;
   border-radius: 18px;
@@ -93,6 +94,9 @@
 .Card>aside>p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.5em;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .Header {
