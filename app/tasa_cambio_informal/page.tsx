@@ -9,7 +9,7 @@ export default function Page() {
 
 	return (
 		<>
-			<header className={estilos.Header}>Tasa de Oculus Reparo</header>
+			<header className={estilos.Header}>Tasa de Cambio Informal</header>
 			<section>
 				<Card
 					dinero={moneda ? moneda.usd.toFixed(2) + ' CUP' : 'Cargando'}

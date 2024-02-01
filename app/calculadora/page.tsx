@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { Card } from '../UI/Card';
 import estilos from '../estilos.module.css';
 import { ContextData } from '../Components/ContextProvider';
+import { Span } from 'next/dist/trace';
 
 export default function Page() {
 	const moneda = useContext(ContextData);
@@ -30,24 +31,24 @@ export default function Page() {
 			<section>
 				<Card
 					dinero={`${moneda ? (valor ? valor * moneda.usd : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.euro).toFixed(2) + ' EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.mlc).toFixed(2) + ' MLC' : 'Cargando'}`}
+					dinero2={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.euro).toFixed(2) + ' Convertidos en  EUROS' : 'Cargando'}`}
+					dinero3={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.mlc).toFixed(2) + ' Convertidos en  MLC' : 'Cargando'}`}
 					image='/usa.webp'
-					moneda='USD'
+					moneda={valor ? valor + ' USD son :' : 'USD'}
 				/>
 				<Card
 					dinero={`${moneda ? (valor ? valor * moneda.euro : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.usd).toFixed(2) + ' USD' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.mlc).toFixed(2) + ' MLC' : 'Cargando'}`}
+					dinero2={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.usd).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
+					dinero3={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.mlc).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
 					image='/euro.webp'
-					moneda='EURO'
+					moneda={valor ? valor + ' EUROS son :' : 'EUROS'}
 				/>
 				<Card
 					dinero={`${moneda ? (valor ? valor * moneda.mlc : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.euro).toFixed(2) + ' EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.usd).toFixed(2) + ' USD' : 'Cargando'}`}
+					dinero2={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.euro).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
+					dinero3={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.usd).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
 					image='/mlc.jpeg'
-					moneda='MLC'
+					moneda={valor ? valor + ' MLC son :' : 'MLC'}
 				/>
 			</section>
 		</>

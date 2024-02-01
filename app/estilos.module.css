@@ -11,6 +11,7 @@
 .Main>section {
   margin: 4vh;
   height: 75vh;
+  width: 100%;
   overflow: overlay;
 }
 
@@ -42,13 +43,12 @@
 }
 
 .Card {
-  width: 50vw;
+  width: 96vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
   margin: 1vh;
   background-color: rgb(4, 70, 70);
   padding: 2vh;
@@ -59,6 +59,7 @@
   -moz-transition: 0.5s ease;
   -ms-transition: 0.5s ease;
   -o-transition: 0.5s ease;
+  align-items: center;
 }
 
 .Card:hover {
@@ -104,7 +105,7 @@
   justify-content: space-evenly;
   border-radius: 10px;
   padding: 2vh;
-  width: 56vw;
+  width: 100vw;
   background-color: rgb(0, 78, 88);
 }
 
@@ -112,13 +113,19 @@
   display: flex;
   justify-content: flex-start;
   border-radius: 10px;
-  width: 40vw;
+  width: 92vw;
   background-color: rgb(0, 78, 88);
-  margin-top: 2vh;
+  margin: 2vh;
   padding: 2vh 1vh;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.Article>label {
+  margin-left: 3px;
+  padding: 3px;
+  font-family: cursive;
 }
 
 .Article>input {
