@@ -2,7 +2,7 @@
 import { useContext } from 'react';
 import { Card } from '../UI/Card';
 import estilos from '../estilos.module.css';
-import { ContextData } from '../Components/ContextProvider';
+import { ContextData } from '../store/ContextProvider';
 
 export default function Page() {
 	const moneda = useContext(ContextData);

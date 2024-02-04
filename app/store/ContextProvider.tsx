@@ -1,8 +1,8 @@
 'use client';
 import React, { createContext, useEffect, useState } from 'react';
-import { FetchingApi } from './FecthingApi';
+import { FetchingApi } from '../Components/FecthingApi';
 
-type ContextType = { usd: any; euro: any; mlc: any; cup: { usd: any; euro: any; mlc: any };error:any } | undefined;
+type ContextType = { usd: any; euro: any; mlc: any; cup: { usd: any; euro: any; mlc: any } } | undefined;
 export const ContextData = createContext<ContextType>(undefined);
 
 export function ContextProvider({ children }: { children: React.ReactNode }) {

@@ -29,7 +29,7 @@ export const FetchingApi = async () => {
 			},
 		};
 
-		console.log(responseEURO.data.rate.CUP)
+		console.log(responseEURO.data.rate.CUP);
 
 		return moneda;
 	} catch (error) {
