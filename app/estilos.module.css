@@ -13,6 +13,17 @@
   height: 75vh;
   width: 100%;
   overflow: overlay;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main>section>div {
+  height: 100%;
+  width: 100%;
 }
 
 .barraNavegacion {
@@ -105,7 +116,7 @@
   justify-content: space-evenly;
   border-radius: 10px;
   padding: 2vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(0, 78, 88);
 }
 

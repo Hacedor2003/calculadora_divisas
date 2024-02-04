@@ -17,8 +17,8 @@ export default function Page() {
 	};
 
 	return (
-		<>
-			<header className={estilos.Header}>Calculadora Oculos Reparo</header>
+		<div>
+			<header className={estilos.Header}>Calculadora Oculos Reparo  </header>
 			<article className={estilos.Article}>
 				<label htmlFor='calculadora'>Valor:</label>
 				<input
@@ -29,6 +29,13 @@ export default function Page() {
 				/>
 			</article>
 			<section>
+				<Card
+					dinero={`${moneda ? (valor ? valor * moneda.cup.usd : 0).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
+					dinero2={`${moneda ? (valor ? valor * moneda.cup.euro : 0).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
+					dinero3={`${moneda ? (valor ? valor * moneda.cup.mlc : 0).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
+					image='/mlc.jpeg'
+					moneda={valor ? valor + ' CUP son :' : 'CUP'}
+				/>
 				<Card
 					dinero={`${moneda ? (valor ? valor * moneda.usd : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
 					dinero2={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.euro).toFixed(2) + ' Convertidos en  EUROS' : 'Cargando'}`}
@@ -51,6 +58,6 @@ export default function Page() {
 					moneda={valor ? valor + ' MLC son :' : 'MLC'}
 				/>
 			</section>
-		</>
+		</div>
 	);
 }

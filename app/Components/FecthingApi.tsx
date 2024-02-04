@@ -22,7 +22,14 @@ export const FetchingApi = async () => {
 			usd: responseUSD.data.rates.CUP.sell,
 			euro: responseEURO.data.rates.CUP.sell,
 			mlc: responseMLC.data.rates.CUP.sell,
+			cup: {
+				usd: responseUSD.data.rates.CUP.shop,
+				euro: responseEURO.data.rates.CUP.shop,
+				mlc: responseMLC.data.rates.CUP.shop,
+			},
 		};
+
+		console.log(responseEURO.data.rate.CUP)
 
 		return moneda;
 	} catch (error) {
