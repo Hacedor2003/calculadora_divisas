@@ -23,9 +23,9 @@ export const FetchingApi = async () => {
 			euro: responseEURO.data.rates.CUP.sell,
 			mlc: responseMLC.data.rates.CUP.sell,
 			cup: {
-				usd: responseUSD.data.rates.CUP.shop,
-				euro: responseEURO.data.rates.CUP.shop,
-				mlc: responseMLC.data.rates.CUP.shop,
+				usd: responseUSD.data.rates.CUP.buy,
+				euro: responseEURO.data.rates.CUP.buy,
+				mlc: responseMLC.data.rates.CUP.buy,
 			},
 		};
 
