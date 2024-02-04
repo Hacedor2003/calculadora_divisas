@@ -10,9 +10,9 @@ export const ViewCard = (vista: string, valor: number | null) => {
 		case 'CUP':
 			content = (
 				<Card
-					dinero={`${moneda ? (valor ? valor * moneda.cup.usd : 0).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
-					dinero2={`${moneda ? (valor ? valor * moneda.cup.euro : 0).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? (valor ? valor * moneda.cup.mlc : 0).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
+					dinero={`${moneda ? (valor ? valor / moneda.cup.usd : 0).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
+					dinero2={`${moneda ? (valor ? valor / moneda.cup.euro : 0).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
+					dinero3={`${moneda ? (valor ? valor / moneda.cup.mlc : 0).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
 					image='/mlc.jpeg'
 					moneda={valor ? valor + ' CUP son :' : 'CUP'}
 				/>
