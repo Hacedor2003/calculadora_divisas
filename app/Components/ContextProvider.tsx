@@ -2,7 +2,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { FetchingApi } from './FecthingApi';
 
-type ContextType = { usd: any; euro: any; mlc: any; cup: { usd: any; euro: any; mlc: any } } | undefined;
+type ContextType = { usd: any; euro: any; mlc: any; cup: { usd: any; euro: any; mlc: any };error:any } | undefined;
 export const ContextData = createContext<ContextType>(undefined);
 
 export function ContextProvider({ children }: { children: React.ReactNode }) {

@@ -1,24 +1,27 @@
 'use client';
-import { useContext, useState } from 'react';
-import { Card } from '../UI/Card';
+import { useState } from 'react';
 import estilos from '../estilos.module.css';
-import { ContextData } from '../Components/ContextProvider';
-import { Span } from 'next/dist/trace';
+import { ViewCard } from './Components/ViewCard';
 
 export default function Page() {
-	const moneda = useContext(ContextData);
-	const [valor, setValor] = useState(null);
+	const [valor, setValor] = useState<number | null>(null);
+	const [isOpen, setIsOpen] = useState(false);
+	const [vista, setVista] = useState('');
 
-	const handleInputChange = (e: any) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const inputValue = e.target.valueAsNumber;
 		if (inputValue >= 0 || Number.isNaN(inputValue)) {
 			setValor(inputValue);
 		}
 	};
 
+	const toggleDropdown = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
 		<div>
-			<header className={estilos.Header}>Calculadora Oculos Reparo  </header>
+			<header className={estilos.Header}>Calculadora Oculos Reparo</header>
 			<article className={estilos.Article}>
 				<label htmlFor='calculadora'>Valor:</label>
 				<input
@@ -27,37 +30,71 @@ export default function Page() {
 					value={valor ? valor : ''}
 					onChange={handleInputChange}
 				/>
+				<div className='relative inline-block text-left m-2'>
+					<button
+						type='button'
+						className='inline-flex justify-center w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-teal-900 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+						id='options-menu'
+						aria-haspopup='true'
+						onClick={toggleDropdown}>
+						Moneda:
+						<svg
+							className='-mr-1 ml-2 h-5 w-5'
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 20 20'
+							fill='currentColor'
+							aria-hidden='true'>
+							<path
+								fillRule='evenodd'
+								d='M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 011.414-1.414L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-.707.293z'
+								clipRule='evenodd'
+							/>
+						</svg>
+					</button>
+
+					{isOpen && (
+						<div
+							className='origin-top-right absolute right-0 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none'
+							role='menu'
+							aria-orientation='vertical'
+							aria-labelledby='options-menu'>
+							<div
+								className='py-1 w-fit'
+								role='none'>
+								<button
+									type='button'
+									className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+									role='menuitem'
+									onClick={() => setVista('CUP')}>
+									CUP
+								</button>
+								<button
+									type='button'
+									className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+									role='menuitem'
+									onClick={() => setVista('USD')}>
+									USD
+								</button>
+								<button
+									type='button'
+									className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+									role='menuitem'
+									onClick={() => setVista('EUROS')}>
+									EUROS
+								</button>
+								<button
+									type='button'
+									className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+									role='menuitem'
+									onClick={() => setVista('MLC')}>
+									MLC
+								</button>
+							</div>
+						</div>
+					)}
+				</div>
 			</article>
-			<section>
-				<Card
-					dinero={`${moneda ? (valor ? valor * moneda.cup.usd : 0).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
-					dinero2={`${moneda ? (valor ? valor * moneda.cup.euro : 0).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? (valor ? valor * moneda.cup.mlc : 0).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
-					image='/mlc.jpeg'
-					moneda={valor ? valor + ' CUP son :' : 'CUP'}
-				/>
-				<Card
-					dinero={`${moneda ? (valor ? valor * moneda.usd : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.euro).toFixed(2) + ' Convertidos en  EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.usd : 0) / moneda.mlc).toFixed(2) + ' Convertidos en  MLC' : 'Cargando'}`}
-					image='/usa.webp'
-					moneda={valor ? valor + ' USD son :' : 'USD'}
-				/>
-				<Card
-					dinero={`${moneda ? (valor ? valor * moneda.euro : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.usd).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.euro : 0) / moneda.mlc).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
-					image='/euro.webp'
-					moneda={valor ? valor + ' EUROS son :' : 'EUROS'}
-				/>
-				<Card
-					dinero={`${moneda ? (valor ? valor * moneda.mlc : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
-					dinero2={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.euro).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
-					dinero3={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.usd).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
-					image='/mlc.jpeg'
-					moneda={valor ? valor + ' MLC son :' : 'MLC'}
-				/>
-			</section>
+			<section>{ViewCard(vista, valor)}</section>
 		</div>
 	);
 }
