@@ -1,0 +1,14 @@
+#page_calculadora,
+#page_cambio_informal,
+#page_oculos_reparo {
+  margin: 4vh;
+  height: 75vh;
+  width: 100%;
+  overflow: overlay;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}

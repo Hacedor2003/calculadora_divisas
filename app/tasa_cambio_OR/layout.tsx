@@ -3,10 +3,5 @@ export default function Layout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<section>
-			{children}
-			<nav></nav>
-		</section>
-	);
+	return <section id='page_oculos_reparo'>{children}</section>;
 }

@@ -8,19 +8,6 @@
   background-color: rgb(4, 40, 45);
 }
 
-.Main>section {
-  margin: 4vh;
-  height: 75vh;
-  width: 100%;
-  overflow: overlay;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .Main>section>div {
   height: 100%;
   width: 100%;

@@ -13,7 +13,7 @@ export const ViewCard = (vista: string, valor: number | null) => {
 					dinero={`${moneda ? (valor ? valor / moneda.cup.usd : 0).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
 					dinero2={`${moneda ? (valor ? valor / moneda.cup.euro : 0).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
 					dinero3={`${moneda ? (valor ? valor / moneda.cup.mlc : 0).toFixed(2) + ' Convertidos en MLC' : 'Cargando'}`}
-					image='/mlc.jpeg'
+					image='/mlc.png'
 					moneda={valor ? valor + ' CUP son :' : 'CUP'}
 				/>
 			);
@@ -46,7 +46,7 @@ export const ViewCard = (vista: string, valor: number | null) => {
 					dinero={`${moneda ? (valor ? valor * moneda.mlc : 0).toFixed(2) + ' CUP' : 'Cargando'}`}
 					dinero2={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.euro).toFixed(2) + ' Convertidos en EUROS' : 'Cargando'}`}
 					dinero3={`${moneda ? ((valor ? valor * moneda.mlc : 0) / moneda.usd).toFixed(2) + ' Convertidos en USD' : 'Cargando'}`}
-					image='/mlc.jpeg'
+					image='/mlc.png'
 					moneda={valor ? valor + ' MLC son :' : 'MLC'}
 				/>
 			);
