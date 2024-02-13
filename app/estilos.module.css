@@ -54,7 +54,6 @@
 
 .Card:hover {
   background-color: rgb(54, 53, 53);
-  border: 1px solid black;
 }
 
 .Card>img {
