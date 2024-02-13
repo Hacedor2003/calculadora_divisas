@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import estilos from '../estilos.module.css';
 import { ViewCard } from './Components/ViewCard';
+import CalculadoraComponent from './Components/Calculadora/CalculadoraComponent';
 
 export default function Page() {
 	const [valor, setValor] = useState<number | null>(null);
@@ -23,10 +24,12 @@ export default function Page() {
 		<div>
 			<header className={estilos.Header}>Calculadora Oculos Reparo</header>
 			<article className={estilos.Article}>
-				<label htmlFor='calculadora'>Valor:</label>
+				<p>Valor:</p>
 				<p>{valor}</p>
 			</article>
-			<section>{ViewCard(vista, valor)}</section>
+			<section>
+				<CalculadoraComponent />
+			</section>
 		</div>
 	);
 }
