@@ -36,7 +36,7 @@
 }
 
 .Card {
-  width: 25vw;
+  width: 250px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,8 +58,8 @@
 }
 
 .Card>img {
-  height: 8vh;
-  width: 4vw;
+  height: 60px;
+  width: 40px;
 }
 
 .Card>section {
