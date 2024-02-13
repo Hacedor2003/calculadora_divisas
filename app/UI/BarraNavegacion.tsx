@@ -12,8 +12,8 @@ export const BarraNavegacion = () => {
 					<Image
 						src='/PNG Aplicacion/Logo Cambio Informal.png'
 						alt='Logo Cambio Informal'
-						width={75}
-						height={75}
+						width={50}
+						height={50}
 					/>
 				</Link>
 			</li>
@@ -22,8 +22,8 @@ export const BarraNavegacion = () => {
 					<Image
 						src='/PNG Aplicacion/Logo Calculadora.png'
 						alt='Logo Calculadora'
-						width={75}
-						height={75}
+						width={50}
+						height={50}
 					/>
 				</Link>
 			</li>
@@ -32,8 +32,8 @@ export const BarraNavegacion = () => {
 					<Image
 						src='/factura.png'
 						alt='Logo factura'
-						width={75}
-						height={75}
+						width={50}
+						height={50}
 					/>
 				</Link>
 			</li>
@@ -42,8 +42,8 @@ export const BarraNavegacion = () => {
 					<Image
 						src='/PNG Aplicacion/Logo Cambio Oculus Reparo.png'
 						alt='Logo Cambio Oculos Reparo'
-						width={75}
-						height={75}
+						width={50}
+						height={50}
 					/>
 				</Link>
 			</li>
