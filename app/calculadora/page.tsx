@@ -29,6 +29,8 @@ export default function Page() {
 					id='calculadora'
 					value={valor ? valor : ''}
 					onChange={handleInputChange}
+					autoFocus
+					placeholder='Ingrese el monto'
 				/>
 				<div className='relative inline-block text-left m-2'>
 					<button

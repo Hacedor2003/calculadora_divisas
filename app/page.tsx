@@ -13,8 +13,8 @@ export default function Home() {
 			<Image
 				src='/PNG Aplicacion/!!!!!!LOGO APLICACION.png'
 				alt='Foto:Logo'
-				width={500}
-				height={500}
+				width={400}
+				height={400}
 			/>
 		</section>
 	);

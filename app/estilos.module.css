@@ -3,9 +3,11 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: rgb(4, 40, 45);
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .Main>section>div {
@@ -15,28 +17,20 @@
 
 .barraNavegacion {
   display: flex;
-  justify-content: space-evenly;
-  border-radius: 10px;
+  justify-content: center;
+  width: 320px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.barraNavegacion>li {
   padding: 2vh;
-  width: 56vw;
   background-color: rgb(0, 78, 88);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 
-.barraNavegacion>button {
-  padding: 7px;
-  border-radius: 13px;
-  transition: 0.25s;
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -ms-transition: 0.25s;
-  -o-transition: 0.25s;
-}
-
-.barraNavegacion>button:hover {
+.barraNavegacion>li:hover {
   background-color: rgb(5, 48, 54);
 }
 
@@ -53,10 +47,6 @@
   border: 1px solid #0c0b20;
   border-radius: 18px;
   transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
   align-items: center;
 }
 
