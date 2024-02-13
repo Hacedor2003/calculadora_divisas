@@ -6,8 +6,7 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(4, 40, 45);
-  flex-wrap: wrap;
-  align-content: center;
+  flex-wrap: nowrap;
 }
 
 .Main>section>div {
@@ -18,7 +17,7 @@
 .barraNavegacion {
   display: flex;
   justify-content: center;
-  width: 320px;
+  width: 110vw;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;

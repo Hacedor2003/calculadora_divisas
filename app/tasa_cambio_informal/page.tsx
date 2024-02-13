@@ -29,7 +29,7 @@ export default function Page() {
 					dinero={moneda ? moneda.mlc.toFixed(2) + ' CUP' : 'Cargando'}
 					dinero2={''}
 					dinero3={''}
-					image='/mlc.jpeg'
+					image='/mlc.png'
 					moneda='MLC'
 				/>
 			</section>
