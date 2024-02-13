@@ -1,5 +1,5 @@
 .Main {
-  height: 100vh;
+  height: 97vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -26,54 +26,61 @@
 
 .barraNavegacion>li {
   padding: 2vh;
-  background-color: rgb(0, 78, 88);
+  background-color: rgb(0 0 0);
+  border-top: 2px solid #ffbf00;
+  border-bottom: 2px solid #ffbf00;
 }
 
 .barraNavegacion>li:hover {
-  background-color: rgb(5, 48, 54);
+  background-color: rgb(54, 53, 53);
 }
 
 .Card {
-  width: 96vw;
+  width: 25vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: flex-start;
   margin: 1vh;
-  background-color: rgb(4, 70, 70);
+  background-color: rgb(0 0 0);
+  border-top: 2px solid #ffbf00;
+  border-bottom: 2px solid #ffbf00;
   padding: 2vh;
-  border: 1px solid #0c0b20;
   border-radius: 18px;
   transition: 0.5s ease;
   align-items: center;
 }
 
 .Card:hover {
-  background-color: rgb(4, 44, 44);
+  background-color: rgb(54, 53, 53);
   border: 1px solid black;
+}
+
+.Card>img {
+  height: 8vh;
+  width: 4vw;
 }
 
 .Card>section {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  width: 73%;
+  justify-content: center;
 }
 
 .Card>section>p {
   margin-left: 15px;
 }
 
-.Card>section>img {
-  border-radius: 100%;
-}
-
 .Card>aside {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 2vw;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -82,7 +89,7 @@
 .Card>aside>p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.5em;
-  border: 2px solid black;
+  border: 2px dotted #ffbf00;
   border-radius: 20px;
   padding: 10px;
 }
@@ -90,10 +97,12 @@
 .Header {
   display: flex;
   justify-content: space-evenly;
+  background-color: rgb(0 0 0);
+  border-top: 2px solid #ffbf00;
+  border-bottom: 2px solid #ffbf00;
   border-radius: 10px;
   padding: 2vh;
   width: 100%;
-  background-color: rgb(0, 78, 88);
 }
 
 .Article {
@@ -101,7 +110,7 @@
   justify-content: flex-start;
   border-radius: 10px;
   width: 92vw;
-  background-color: rgb(0, 78, 88);
+  background-color: var(---colorBg);
   margin: 2vh;
   padding: 2vh 1vh;
   flex-direction: row;
@@ -122,4 +131,10 @@
   border: 2px dotted black;
   margin-left: 0.5vw;
   padding: 5px;
+}
+
+.moneda {
+  font-size: 1.5rem;
+  font-family: auto;
+  text-decoration: overline;
 }

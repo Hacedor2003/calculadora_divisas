@@ -2,23 +2,21 @@ import Image from 'next/image';
 import React from 'react';
 import estilos from '../estilos.module.css';
 
-export const Card = ({ image, moneda, dinero, dinero2, dinero3 }: { image: string; moneda: string; dinero2: string; dinero3: string; dinero: string }) => {
+export const Card = ({ image, moneda, dinero }: { image: string; moneda: string | null; dinero: string }) => {
 	return (
 		<div className={estilos.Card}>
+			<Image
+				src={`${image}`}
+				alt={`${image}`}
+				width={30}
+				height={30}
+			/>
 			<section>
-				<Image
-					src={`${image}`}
-					alt={`${image}`}
-					width={30}
-					height={30}
-				/>
-				<p>{moneda}</p>
+				<p className={estilos.moneda}>{moneda}</p>
+				<aside>
+					<p>{dinero ? dinero : null}</p>
+				</aside>
 			</section>
-			<aside>
-				<p>{dinero ? dinero : null}</p>
-				<p>{dinero2 ? dinero2 : null}</p>
-				<p>{dinero3 ? dinero3 : null}</p>
-			</aside>
 		</div>
 	);
 };
