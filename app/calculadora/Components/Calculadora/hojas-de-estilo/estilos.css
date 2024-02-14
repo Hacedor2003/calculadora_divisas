@@ -2,8 +2,9 @@
   font-family: Lato, sans-serif;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .contenedor-calculadora {

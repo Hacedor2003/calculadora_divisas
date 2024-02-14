@@ -46,7 +46,7 @@
   background-color: rgb(0 0 0);
   border-top: 2px solid #ffbf00;
   border-bottom: 2px solid #ffbf00;
-  padding: 2vh;
+  padding: 10px;
   border-radius: 18px;
   transition: 0.5s ease;
   align-items: center;
@@ -162,4 +162,37 @@
   padding: 2px;
   margin-right: 20px;
   background: red;
+}
+
+.contenedor_calculadora {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor_imprimir {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contenedor_imprimir>p {
+  margin: 2px;
+}
+
+.contenedor_imprimir>img {
+  margin-bottom: 20px;
+  margin-left: 145px;
+}
+
+.contenedor_producto {
+  border-top: 3px dotted black;
+  border-bottom: 3px dotted black;
+  display: grid;
+  grid-template-columns: 200px 80px 58px 48px;
+  grid-template-rows: 35px 35px;
+  margin: 10px 0px;
 }

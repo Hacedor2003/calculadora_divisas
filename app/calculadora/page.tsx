@@ -11,7 +11,7 @@ export default function Page() {
 	return (
 		<div>
 			<header className={estilos.Header}>Calculadora Oculos Reparo</header>
-			<section>
+			<section className={estilos.contenedor_calculadora}>
 				<CalculadoraComponent
 					setWatch={setwatch}
 					input={input}
