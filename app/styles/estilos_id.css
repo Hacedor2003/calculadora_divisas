@@ -22,7 +22,7 @@
 
 #areaImprimir {
   width: 400px;
-  height: 94%;
+  height: 120%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,4 +30,10 @@
   border: 2px dotted black;
   padding: 20px;
   color: black;
+}
+
+#btn_Imprimir {
+  border: #ffbf00 2px solid;
+  padding: 3px;
+  background: black;
 }

@@ -188,6 +188,13 @@
   margin-left: 145px;
 }
 
+.contenedor_imprimir>p>input {
+  padding: 5px;
+  font-size: 17px;
+}
+
+
+
 .contenedor_producto {
   border-top: 3px dotted black;
   border-bottom: 3px dotted black;

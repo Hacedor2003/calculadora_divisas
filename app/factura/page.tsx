@@ -6,6 +6,15 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Page() {
+	const [nombre, setNombre] = useState('');
+	const [telefono, setTelefono] = useState('');
+	const [fechaHora, setFechaHora] = useState('');
+	const [total, setTotal] = useState('');
+	const [subTotal, setSubTotal] = useState('');
+	const [pagoEfectuado, setPagoEfectuado] = useState('');
+	const [debe, setDebe] = useState('');
+	const [metodoPago, setMetodoPago] = useState('');
+
 	return (
 		<>
 			<div id='areaImprimir'>
@@ -16,8 +25,29 @@ export default function Page() {
 						width={100}
 						height={100}
 					/>
-					<p>Nombre : Numero de Telefono</p>
-					<p>Fecha/Hora</p>
+					<p>
+						<input
+							type='text'
+							value={nombre}
+							onChange={(e) => setNombre(e.target.value)}
+							placeholder='Nombre'
+						/>{' '}
+						:
+						<input
+							type='text'
+							value={telefono}
+							onChange={(e) => setTelefono(e.target.value)}
+							placeholder='Numero de Telefono'
+						/>
+					</p>
+					<p>
+						<input
+							type='text'
+							value={fechaHora}
+							onChange={(e) => setFechaHora(e.target.value)}
+							placeholder='Fecha/Hora'
+						/>
+					</p>
 					<section className={estilos.contenedor_producto}>
 						<p>Producto</p>
 						<p>Cantidad</p>
@@ -25,18 +55,59 @@ export default function Page() {
 						<p>Debe</p>
 						<p>Producto Vendido</p>
 					</section>
-					<p>Total</p>
-					<p>Sub Total</p>
-					<p>PagoEfectuado</p>
-					<p>Debe</p>
-					<p>Metodo de Pago</p>
-					<p>Gracias por preferirnos , vuelva pronto</p>
+					<p>
+						Total:
+						<input
+							type='text'
+							value={total}
+							onChange={(e) => setTotal(e.target.value)}
+							placeholder='Total'
+						/>
+					</p>
+					<p>
+						Sub Total:
+						<input
+							type='text'
+							value={subTotal}
+							onChange={(e) => setSubTotal(e.target.value)}
+							placeholder='Sub Total'
+						/>
+					</p>
+					<p>
+						Pago Efectuado:
+						<input
+							type='text'
+							value={pagoEfectuado}
+							onChange={(e) => setPagoEfectuado(e.target.value)}
+							placeholder='Pago Efectuado'
+						/>
+					</p>
+					<p>
+						Debe:
+						<input
+							type='text'
+							value={debe}
+							onChange={(e) => setDebe(e.target.value)}
+							placeholder='Debe'
+						/>
+					</p>
+					<p>
+						Metodo de Pago:
+						<input
+							type='text'
+							value={metodoPago}
+							onChange={(e) => setMetodoPago(e.target.value)}
+							placeholder='Metodo de Pago'
+						/>
+					</p>
+					<p>Gracias por preferirnos, vuelva pronto</p>
 				</div>
 			</div>
 			<input
 				type='button'
+				id='btn_Imprimir'
 				onClick={() => printDiv('areaImprimir')}
-				value='imprimir div'
+				value='Imprimir'
 			/>
 		</>
 	);
