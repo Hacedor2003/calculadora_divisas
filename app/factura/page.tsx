@@ -1,19 +1,56 @@
 'use client';
-
-import printDiv from './Components/printDiv';
-import estilos from '../estilos.module.css';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
+import estilos from '../estilos.module.css';
+import printDiv from './Components/printDiv';
 
 export default function Page() {
-	const [nombre, setNombre] = useState('');
-	const [telefono, setTelefono] = useState('');
-	const [fechaHora, setFechaHora] = useState('');
-	const [total, setTotal] = useState('');
-	const [subTotal, setSubTotal] = useState('');
-	const [pagoEfectuado, setPagoEfectuado] = useState('');
-	const [debe, setDebe] = useState('');
-	const [metodoPago, setMetodoPago] = useState('');
+	const [formValues, setFormValues] = useState({
+		nombre: '',
+		telefono: '',
+		fechaHora: '',
+		total: '',
+		subTotal: '',
+		pagoEfectuado: '',
+		debe: '',
+		metodoPago: '',
+	});
+
+	const { nombre, telefono, fechaHora, total, subTotal, pagoEfectuado, debe, metodoPago } = formValues;
+
+	const handleChange = (e: any) => {
+		const { name, value } = e.target;
+		setFormValues({ ...formValues, [name]: value });
+	};
+
+	const isFormComplete = Object.values(formValues).every((value) => value !== '');
+
+	const agregarProducto = () => {
+		const contenedor = document.getElementById('contenedor_listas_producto');
+
+		// Crear los 4 elementos <input> con placeholders
+		const inputTexto = document.createElement('input');
+		inputTexto.type = 'text';
+		inputTexto.placeholder = 'Producto:';
+
+		const inputNumero1 = document.createElement('input');
+		inputNumero1.type = 'number';
+		inputNumero1.placeholder = 'Cantidad:';
+
+		const inputNumero2 = document.createElement('input');
+		inputNumero2.type = 'number';
+		inputNumero2.placeholder = 'Precio:';
+
+		const inputNumero3 = document.createElement('input');
+		inputNumero3.type = 'number';
+		inputNumero3.placeholder = 'Debe:';
+
+		// Agregar los elementos al contenedor
+		contenedor?.appendChild(inputTexto);
+		contenedor?.appendChild(inputNumero1);
+		contenedor?.appendChild(inputNumero2);
+		contenedor?.appendChild(inputNumero3);
+	};
 
 	return (
 		<>
@@ -28,66 +65,81 @@ export default function Page() {
 					<p>
 						<input
 							type='text'
+							name='nombre'
 							value={nombre}
-							onChange={(e) => setNombre(e.target.value)}
+							onChange={handleChange}
 							placeholder='Nombre'
 						/>{' '}
 						:
 						<input
-							type='text'
+							type='number'
+							name='telefono'
 							value={telefono}
-							onChange={(e) => setTelefono(e.target.value)}
+							onChange={handleChange}
 							placeholder='Numero de Telefono'
 						/>
 					</p>
 					<p>
 						<input
-							type='text'
+							type='datetime-local'
+							name='fechaHora'
 							value={fechaHora}
-							onChange={(e) => setFechaHora(e.target.value)}
+							onChange={handleChange}
 							placeholder='Fecha/Hora'
 						/>
 					</p>
-					<section className={estilos.contenedor_producto}>
-						<p>Producto</p>
+					<section
+						id='contenedor_listas_producto'
+						className={estilos.contenedor_producto}>
+						<p>
+							Producto{' '}
+							<button
+								type='button'
+								onClick={agregarProducto}>
+								+
+							</button>
+						</p>
 						<p>Cantidad</p>
 						<p>Precio</p>
 						<p>Debe</p>
-						<p>Producto Vendido</p>
 					</section>
 					<p>
 						Total:
 						<input
-							type='text'
+							type='number'
+							name='total'
 							value={total}
-							onChange={(e) => setTotal(e.target.value)}
+							onChange={handleChange}
 							placeholder='Total'
 						/>
 					</p>
 					<p>
 						Sub Total:
 						<input
-							type='text'
+							type='number'
+							name='subTotal'
 							value={subTotal}
-							onChange={(e) => setSubTotal(e.target.value)}
+							onChange={handleChange}
 							placeholder='Sub Total'
 						/>
 					</p>
 					<p>
 						Pago Efectuado:
 						<input
-							type='text'
+							type='number'
+							name='pagoEfectuado'
 							value={pagoEfectuado}
-							onChange={(e) => setPagoEfectuado(e.target.value)}
+							onChange={handleChange}
 							placeholder='Pago Efectuado'
 						/>
 					</p>
 					<p>
 						Debe:
 						<input
-							type='text'
+							type='number'
+							name='debe'
 							value={debe}
-							onChange={(e) => setDebe(e.target.value)}
+							onChange={handleChange}
 							placeholder='Debe'
 						/>
 					</p>
@@ -95,8 +147,9 @@ export default function Page() {
 						Metodo de Pago:
 						<input
 							type='text'
+							name='metodoPago'
 							value={metodoPago}
-							onChange={(e) => setMetodoPago(e.target.value)}
+							onChange={handleChange}
 							placeholder='Metodo de Pago'
 						/>
 					</p>
@@ -106,6 +159,7 @@ export default function Page() {
 			<input
 				type='button'
 				id='btn_Imprimir'
+				disabled={!isFormComplete}
 				onClick={() => printDiv('areaImprimir')}
 				value='Imprimir'
 			/>

@@ -190,16 +190,14 @@
 
 .contenedor_imprimir>p>input {
   padding: 5px;
-  font-size: 17px;
+  font-size: 18px;
 }
-
-
 
 .contenedor_producto {
   border-top: 3px dotted black;
   border-bottom: 3px dotted black;
   display: grid;
   grid-template-columns: 200px 80px 58px 48px;
-  grid-template-rows: 35px 35px;
+  grid-template-rows: 35px 40px auto;
   margin: 10px 0px;
 }
