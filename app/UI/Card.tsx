@@ -14,7 +14,13 @@ export const Card = ({ image, moneda, dinero }: { image: string; moneda: string 
 			<section>
 				<p className={estilos.moneda}>{moneda}</p>
 				<aside>
-					<p>{dinero ? dinero : null}</p>
+					<p>{Number(dinero) ? dinero : null}</p>
+				</aside>
+			</section>
+			<section>
+				<p className={estilos.monedaOR}>{moneda}</p>
+				<aside>
+					<p>{Number(dinero) ? dinero + 10 : null}</p>
 				</aside>
 			</section>
 		</div>

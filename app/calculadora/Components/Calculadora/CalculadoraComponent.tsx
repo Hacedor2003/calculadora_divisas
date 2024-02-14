@@ -2,20 +2,22 @@ import './hojas-de-estilo/estilos.css';
 import Boton from './componentes/Boton';
 import Pantalla from './componentes/Pantalla';
 import BotonClear from './componentes/BotonClear';
-import { useState } from 'react';
-//import { evaluate } from 'mathjs';
+import { Dispatch, SetStateAction } from 'react';
+import { evaluate } from 'mathjs';
 
-function CalculadoraComponent() {
-	const [input, setInput] = useState('');
-
+function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>> }) {
 	const agregarInput = (val: number) => {
-		setInput(input + val);
+		if (input === 0) {
+			setInput(val);
+		} else {
+			setInput(input + val);
+		}
 	};
 
 	const calcularResultado = () => {
 		if (input) {
-			//setInput(evaluate(input));
-			setInput(input);
+			setInput(evaluate(input));
+			setWatch((valor: boolean) => !valor);
 		} else {
 			alert('Por favor ingrese valores para realizar los cálculos.');
 		}
@@ -50,7 +52,7 @@ function CalculadoraComponent() {
 					<Boton manejarClic={agregarInput}>/</Boton>
 				</div>
 				<div className='fila'>
-					<BotonClear manejarClear={() => setInput('')}>Clear</BotonClear>
+					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
 				</div>
 			</div>
 		</div>

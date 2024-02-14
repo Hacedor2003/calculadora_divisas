@@ -27,21 +27,11 @@ export const BarraNavegacion = () => {
 					/>
 				</Link>
 			</li>
-			<li>
+			<li id='link_factura'>
 				<Link href={'/factura'}>
 					<Image
 						src='/factura.png'
 						alt='Logo factura'
-						width={50}
-						height={50}
-					/>
-				</Link>
-			</li>
-			<li id='link_tasa_OR'>
-				<Link href={'/tasa_cambio_OR'}>
-					<Image
-						src='/PNG Aplicacion/Logo Cambio Oculus Reparo.png'
-						alt='Logo Cambio Oculos Reparo'
 						width={50}
 						height={50}
 					/>
