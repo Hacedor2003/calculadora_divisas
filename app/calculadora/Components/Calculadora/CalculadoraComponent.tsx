@@ -1,9 +1,10 @@
 import './hojas-de-estilo/estilos.css';
-import Boton from './componentes/Boton';
-import Pantalla from './componentes/Pantalla';
-import BotonClear from './componentes/BotonClear';
+import Boton from './components/Boton';
+import Pantalla from './components/Pantalla';
+import BotonClear from './components/BotonClear';
 import { Dispatch, SetStateAction } from 'react';
 import { evaluate } from 'mathjs';
+import DropdownMenu from './components/MenuDespegable/MenuDespegable';
 
 function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>> }) {
 	const agregarInput = (val: number) => {
@@ -53,6 +54,7 @@ function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatc
 				</div>
 				<div className='fila'>
 					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
+					<DropdownMenu />
 				</div>
 			</div>
 		</div>
