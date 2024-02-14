@@ -17,7 +17,8 @@ function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatc
 
 	const calcularResultado = () => {
 		if (input) {
-			setInput(evaluate(input));
+			const resultado = evaluate(input.toString());
+			setInput(resultado);
 			setWatch((valor: boolean) => !valor);
 		} else {
 			alert('Por favor ingrese valores para realizar los cálculos.');
