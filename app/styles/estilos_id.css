@@ -21,8 +21,9 @@
 }
 
 #areaImprimir {
+  background: white;
   width: 400px;
-  height: 120%;
+  height: 631px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +33,13 @@
   color: black;
 }
 
+#areaImprimir input {
+  border-bottom: 2px solid black;
+}
+
 #btn_Imprimir {
   border: #ffbf00 2px solid;
   padding: 3px;
   background: black;
+  color: white;
 }

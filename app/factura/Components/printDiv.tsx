@@ -1,6 +1,6 @@
 import html2canvas from 'html2canvas';
 
-export default function printDiv(nombreDiv: string) {
+export default function printDiv(nombreDiv: string, nombre: string) {
 	var divElement = document.getElementById(nombreDiv);
 
 	if (!divElement) {
@@ -12,7 +12,7 @@ export default function printDiv(nombreDiv: string) {
 		var imgData = canvas.toDataURL('image/png');
 
 		var link = document.createElement('a');
-		link.download = 'imagen.png';
+		link.download = `Factura-${nombre}.png`;
 		link.href = imgData;
 		link.click();
 	});

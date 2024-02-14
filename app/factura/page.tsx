@@ -160,7 +160,7 @@ export default function Page() {
 				type='button'
 				id='btn_Imprimir'
 				disabled={!isFormComplete}
-				onClick={() => printDiv('areaImprimir')}
+				onClick={() => printDiv('areaImprimir', nombre)}
 				value='Imprimir'
 			/>
 		</>
