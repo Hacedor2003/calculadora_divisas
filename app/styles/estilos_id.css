@@ -26,11 +26,10 @@
   width: 400px;
   height: 631px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   border: 2px dotted black;
-  padding: 20px;
   color: black;
 }
 
