@@ -181,13 +181,21 @@
   justify-content: center;
 }
 
+.contenedor_imprimir>aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
 .contenedor_imprimir>p {
   margin: 2px;
 }
 
 .contenedor_imprimir>img {
-  margin-bottom: 20px;
-  margin-left: 145px;
+  width: 100px;
+  height: 100px;
 }
 
 .contenedor_imprimir>p>input {
