@@ -57,7 +57,7 @@ export default function Page() {
 			<div id='areaImprimir'>
 				<div className={estilos.contenedor_imprimir}>
 					<aside>
-						<Image
+						<img
 							src='/PNG Aplicacion/Logo Cambio Oculus Reparo.png'
 							alt='Logo Optica'
 							width={100}
