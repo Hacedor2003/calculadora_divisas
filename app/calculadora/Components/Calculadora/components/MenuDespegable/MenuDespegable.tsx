@@ -8,6 +8,11 @@ const DropdownMenu = ({ setSelectedMoneda }: { setSelectedMoneda: Function }) =>
 		setIsOpen(!isOpen);
 	};
 
+	const handleMonedaSelection = (moneda: string) => {
+		setSelectedMoneda(moneda);
+		handleToggle();
+	};
+
 	return (
 		<div className={styles.dropdown}>
 			<button
@@ -18,10 +23,10 @@ const DropdownMenu = ({ setSelectedMoneda }: { setSelectedMoneda: Function }) =>
 			</button>
 			{isOpen && (
 				<div className={styles.dropdownContent}>
-					<p onClick={() => setSelectedMoneda('USD')}>USD</p>
-					<p onClick={() => setSelectedMoneda('MLC')}>MLC</p>
-					<p onClick={() => setSelectedMoneda('EURO')}>EURO</p>
-					<p onClick={() => setSelectedMoneda('CUP')}>CUP</p>
+					<p onClick={() => handleMonedaSelection('USD')}>USD</p>
+					<p onClick={() => handleMonedaSelection('MLC')}>MLC</p>
+					<p onClick={() => handleMonedaSelection('EURO')}>EURO</p>
+					<p onClick={() => handleMonedaSelection('CUP')}>CUP</p>
 				</div>
 			)}
 		</div>
