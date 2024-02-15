@@ -1,0 +1,19 @@
+.Categorias {
+  height: 41vh;
+  margin: 20px 0px;
+  background-color: rgb(80, 54, 54);
+}
+
+.Categorias>h3 {
+  padding: 12px;
+}
+
+.Categorias>ul {
+  list-style-type: none;
+  display: flex;
+  height: 85%;
+  width: 98vw;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: overlay;
+}

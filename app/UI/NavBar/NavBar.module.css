@@ -1,0 +1,17 @@
+.NavBar {
+  padding: 18px 0px;
+  width: 98vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista_NavBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 27vw;
+}

@@ -1,0 +1,21 @@
+.Mas_Vistos {
+  height: 60vh;
+  background-color: rgb(80, 54, 54);
+}
+
+.lista_Mas_Vistos {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.lista_Mas_Vistos>li {
+  width: 99%;
+  height: 61%;
+  position: absolute;
+  background-color: black;
+}

@@ -1,6 +1,9 @@
 'use client';
-import Image from 'next/image';
 import { useEffect } from 'react';
+import { Mas_Vistos } from './Components/Mas_Vistos/Mas_Vistos';
+import { Peliculas } from './Components/Categorias/Peliculas/Peliculas';
+import { Series } from './Components/Categorias/Series/Series';
+import { Novelas } from './Components/Categorias/Novelas/Novelas';
 
 export default function Home() {
 	useEffect(() => {
@@ -9,13 +12,11 @@ export default function Home() {
 		}
 	}, []);
 	return (
-		<section>
-			<Image
-				src='/PNG Aplicacion/!!!!!!LOGO APLICACION.png'
-				alt='Foto:Logo'
-				width={400}
-				height={400}
-			/>
-		</section>
+		<article>
+			<Mas_Vistos />
+			<Peliculas />
+			<Series />
+			<Novelas />
+		</article>
 	);
 }

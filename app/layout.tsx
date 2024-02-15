@@ -1,18 +1,17 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { BarraNavegacion } from './UI/BarraNavegacion';
-import estilos from './estilos.module.css';
-import { ContextProvider } from './store/ContextProvider';
+import estilos from './styles/main_page.module.css';
+import { NavBar } from './UI/NavBar/NavBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Calculadora de Divisas',
-	description: 'Pagina web para calcular las divisas de Cuba',
+	title: 'Peliculas',
+	description: 'Paginas Web para descargar las peliculas',
 	generator: 'Next.js',
 	manifest: '/manifest.json',
-	keywords: ['divisas', 'calculadora de divisas'],
+	keywords: ['peliculas'],
 	authors: [
 		{ name: 'Bryan Espinosa' },
 		{
@@ -39,8 +38,8 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<main className={estilos.Main}>
-					<ContextProvider>{children}</ContextProvider>
-					<BarraNavegacion />
+					<NavBar />
+					{children}
 				</main>
 			</body>
 		</html>
