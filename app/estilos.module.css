@@ -187,6 +187,12 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100px;
+}
+
+.contenedor_imprimir>aside>img {
+  width: 100px;
+  height: 100px;
 }
 
 
