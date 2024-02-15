@@ -189,6 +189,11 @@
   width: 100%;
 }
 
+.contenedor_imprimir>aside>img {
+  width: 9vw;
+  height: auto;
+}
+
 .contenedor_imprimir>p {
   margin: 2px;
 }
