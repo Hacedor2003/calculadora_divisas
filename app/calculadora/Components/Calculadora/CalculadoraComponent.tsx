@@ -6,7 +6,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { evaluate } from 'mathjs';
 import DropdownMenu from './components/MenuDespegable/MenuDespegable';
 
-function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>> }) {
+function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda }: { setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
 	const agregarInput = (val: number) => {
 		if (input === 0) {
 			setInput(val);
@@ -55,7 +55,7 @@ function CalculadoraComponent({ setWatch, input, setInput }: { setWatch: Dispatc
 				</div>
 				<div className='fila'>
 					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
-					<DropdownMenu />
+					<DropdownMenu setSelectedMoneda={setSelectedMoneda} />
 				</div>
 			</div>
 		</div>

@@ -14,13 +14,13 @@ export const Card = ({ image, moneda, dinero }: { image: string; moneda: string 
 			<section>
 				<p className={estilos.moneda}>{moneda}</p>
 				<aside>
-					<p>{Number(dinero) ? dinero : null}</p>
+					<p>{Number(dinero)}</p>
 				</aside>
 			</section>
 			<section>
 				<p className={estilos.monedaOR}>{moneda}</p>
 				<aside>
-					<p>{Number(dinero) ? dinero + 10 : null}</p>
+					<p>{(Number(dinero) + 10).toFixed(2)}</p>
 				</aside>
 			</section>
 		</div>

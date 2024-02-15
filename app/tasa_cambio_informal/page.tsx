@@ -12,17 +12,17 @@ export default function Page() {
 			<header className={estilos.Header}>Tasa de Cambio Informal</header>
 			<section id='container_informal'>
 				<Card
-					dinero={moneda ? moneda.usd.toFixed(2) + ' CUP' : 'Cargando'}
+					dinero={moneda?.cup.usd}
 					image='/usa.webp'
 					moneda='USD'
 				/>
 				<Card
-					dinero={moneda ? moneda.euro.toFixed(2) + ' CUP' : 'Cargando'}
+					dinero={moneda?.cup.euro}
 					image='/euro.webp'
 					moneda='EURO'
 				/>
 				<Card
-					dinero={moneda ? moneda.mlc.toFixed(2) + ' CUP' : 'Cargando'}
+					dinero={moneda?.cup.mlc}
 					image='/mlc.png'
 					moneda='MLC'
 				/>

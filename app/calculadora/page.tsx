@@ -7,6 +7,7 @@ import { ViewCards } from './Components/ViewCards/ViewCards';
 export default function Page() {
 	const [watch, setwatch] = useState(false);
 	const [input, setInput] = useState(0);
+	const [selectedMoneda, setSelectedMoneda] = useState('');
 
 	return (
 		<div>
@@ -16,11 +17,13 @@ export default function Page() {
 					setWatch={setwatch}
 					input={input}
 					setInput={setInput}
+					setSelectedMoneda={setSelectedMoneda}
 				/>
 				<ViewCards
 					input={input}
 					watch={watch}
 					setwatch={setwatch}
+					selectedMoneda={selectedMoneda}
 				/>
 			</section>
 		</div>

@@ -1,35 +1,33 @@
 import { Card } from '@/app/UI/Card';
-import { ContextData } from '@/app/store/ContextProvider';
-import React, { useContext } from 'react';
 import estilos from '../../../estilos.module.css';
+import { SelectedMoneda } from './SelectedMoneda';
 
-export const ViewCards = ({ watch, setwatch, input }: { watch: boolean; setwatch: Function; input: number }) => {
-	const moneda = useContext(ContextData);
+export const ViewCards = ({ watch, setwatch, input, selectedMoneda }: { watch: boolean; setwatch: Function; input: number; selectedMoneda: string }) => {
+	if (!watch || !input || !selectedMoneda) {
+		return null;
+	}
 
-	return watch ? (
+	const { valores, tiposMoneda } = SelectedMoneda(selectedMoneda, input);
+
+	const toggleWatch = () => {
+		setwatch((valor: boolean) => !valor);
+	};
+
+	return (
 		<div className={estilos.contenedor_cards_calculadora}>
 			<button
 				type='button'
-				onClick={() => {
-					setwatch((valor: boolean) => !valor);
-				}}>
+				onClick={toggleWatch}>
 				X
 			</button>
-			<Card
-				dinero={moneda ? input / moneda?.usd.toFixed(2) + ' CUP' : 'Cargando'}
-				image='/usa.webp'
-				moneda='USD'
-			/>
-			<Card
-				dinero={moneda ? input / moneda?.euro.toFixed(2) + ' CUP' : 'Cargando'}
-				image='/euro.webp'
-				moneda='EURO'
-			/>
-			<Card
-				dinero={moneda ? input / moneda?.mlc.toFixed(2) + ' CUP' : 'Cargando'}
-				image='/mlc.png'
-				moneda='MLC'
-			/>
+			{valores.map((value, index) => (
+				<Card
+					key={index}
+					dinero={value}
+					image='/usa.webp'
+					moneda={tiposMoneda[index]}
+				/>
+			))}
 		</div>
-	) : null;
+	);
 };

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import React, { createContext } from 'react';
 
 export const FetchingApi = async () => {
 	const configUSD = {
@@ -27,13 +26,22 @@ export const FetchingApi = async () => {
 				euro: responseEURO.data.rates.CUP.buy,
 				mlc: responseMLC.data.rates.CUP.buy,
 			},
+			status: responseUSD.statusText,
 		};
 
-		console.log(responseEURO.data.rate.CUP);
-
 		return moneda;
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error);
-		//return { moneda: { error: error.message } };
+		return {
+			usd: 0,
+			euro: 0,
+			mlc: 0,
+			cup: {
+				usd: 0,
+				euro: 0,
+				mlc: 0,
+			},
+			status: error ? error.message : error,
+		};
 	}
 };
