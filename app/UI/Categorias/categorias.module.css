@@ -1,5 +1,5 @@
 .Categorias {
-  height: 41vh;
+  height: 288px;
   margin: 20px 0px;
   background-color: rgb(80, 54, 54);
 }
@@ -13,7 +13,10 @@
   display: flex;
   height: 85%;
   width: 98vw;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
   overflow: overlay;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }

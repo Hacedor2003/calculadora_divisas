@@ -4,11 +4,26 @@ import { Categorias } from '@/app/UI/Categorias/Categorias';
 export const Series = () => {
 	return (
 		<Categorias titulo='Series'>
-			<Card>Harry Potter</Card>
-			<Card>Harry Potter 1</Card>
-			<Card>Harry Potter 2</Card>
-			<Card>Harry Potter 3</Card>
-			<Card>Harry Potter 4</Card>
+			<Card
+				imageSRC='/calculadora 192x192.png'
+				titulo='Harry Potter 1'
+			/>
+			<Card
+				imageSRC='/calculadora 192x192.png'
+				titulo='Harry Potter 2'
+			/>
+			<Card
+				imageSRC='/calculadora 192x192.png'
+				titulo='Harry Potter 3'
+			/>
+			<Card
+				imageSRC='/calculadora 192x192.png'
+				titulo='Harry Potter 4'
+			/>
+			<Card
+				imageSRC='/calculadora 192x192.png'
+				titulo='Harry Potter 5'
+			/>
 		</Categorias>
 	);
 };

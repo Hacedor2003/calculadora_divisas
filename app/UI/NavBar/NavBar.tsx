@@ -2,6 +2,7 @@ import estilos from './NavBar.module.css';
 export const NavBar = () => {
 	return (
 		<nav className={estilos.NavBar}>
+			<span>Logo</span>
 			<ul className={estilos.lista_NavBar}>
 				<li>Home</li>
 				<li>Peliculas</li>

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import estilos from './styles/main_page.module.css';
 import { NavBar } from './UI/NavBar/NavBar';
+import { Footer } from './UI/Footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
 				<main className={estilos.Main}>
 					<NavBar />
 					{children}
+					<Footer />
 				</main>
 			</body>
 		</html>
