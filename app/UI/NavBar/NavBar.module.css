@@ -15,3 +15,13 @@
   justify-content: space-between;
   width: 27vw;
 }
+
+@media screen and (max-width:844px) {
+  .lista_NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 27vw;
+    flex-wrap: wrap;
+  }
+}

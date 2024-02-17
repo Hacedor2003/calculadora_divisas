@@ -1,0 +1,37 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Contenedor_Multimedia_Aside {
+  padding: 20px;
+}
+
+.Contenedor_Multimedia_Aside>ul {
+  height: 216px;
+  overflow: overlay;
+}
+
+.Contenedor_Multimedia_Aside>ul>li {
+  padding: 12px;
+  border-left: 4px solid white;
+  border-radius: 9px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.Contenedor_Multimedia_Aside>ul>li>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Contenedor_Multimedia_Aside>ul>li>p {
+  height: 100px;
+}
