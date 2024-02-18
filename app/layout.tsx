@@ -4,6 +4,7 @@ import './globals.css';
 import estilos from './styles/main_page.module.css';
 import { NavBar } from './UI/NavBar/NavBar';
 import { Footer } from './UI/Footer/Footer';
+import { DataProvider } from './store/DataContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,9 +40,11 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<main className={estilos.Main}>
-					<NavBar />
-					{children}
-					<Footer />
+					<DataProvider>
+						<NavBar />
+						{children}
+						<Footer />
+					</DataProvider>
 				</main>
 			</body>
 		</html>

@@ -2,10 +2,6 @@ import estilos from './mas_vistos.module.css';
 import '../../styles/estilos.css';
 import Image from 'next/image';
 export const Mas_Vistos = () => {
-	/* const lista = document.getElementById('lista_mas_vistos');
-	if (lista) {
-		lista.scrollWidth = 40 + 'px';
-	} */
 	return (
 		<header className={estilos.Mas_Vistos}>
 			<ul

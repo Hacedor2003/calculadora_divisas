@@ -1,29 +1,16 @@
-import { Card } from '@/app/UI/Card/Card';
-import { Categorias } from '@/app/UI/Categorias/Categorias';
+import { useContext } from 'react';
+import Lista_Categorias from '../Lista_Categorias';
+import { DataContext } from '@/app/store/DataContext';
 
-export const Series = () => {
+const Series = () => {
+	const { data } = useContext(DataContext);
+
 	return (
-		<Categorias titulo='Series'>
-			<Card
-				imageSRC='/calculadora 192x192.png'
-				titulo='Harry Potter 1'
-			/>
-			<Card
-				imageSRC='/calculadora 192x192.png'
-				titulo='Harry Potter 2'
-			/>
-			<Card
-				imageSRC='/calculadora 192x192.png'
-				titulo='Harry Potter 3'
-			/>
-			<Card
-				imageSRC='/calculadora 192x192.png'
-				titulo='Harry Potter 4'
-			/>
-			<Card
-				imageSRC='/calculadora 192x192.png'
-				titulo='Harry Potter 5'
-			/>
-		</Categorias>
+		<Lista_Categorias
+			nombre_categoria='Series'
+			data={data.series}
+		/>
 	);
 };
+
+export default Series;

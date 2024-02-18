@@ -1,9 +1,9 @@
 'use client';
 import { useEffect } from 'react';
 import { Mas_Vistos } from './Components/Mas_Vistos/Mas_Vistos';
-import { Peliculas } from './Components/Categorias/Peliculas/Peliculas';
-import { Series } from './Components/Categorias/Series/Series';
-import { Novelas } from './Components/Categorias/Novelas/Novelas';
+import Series from './Components/Categorias/Series/Series';
+import Peliculas from './Components/Categorias/Peliculas/Peliculas';
+import Novelas from './Components/Categorias/Novelas/Novelas';
 
 export default function Home() {
 	useEffect(() => {

@@ -1,4 +1,4 @@
-import { Peliculas } from '../Components/Categorias/Peliculas/Peliculas';
+import Peliculas from '../Components/Categorias/Peliculas/Peliculas';
 
 export default function Page() {
 	return (

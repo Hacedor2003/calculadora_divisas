@@ -1,4 +1,4 @@
-import { Series } from '../Components/Categorias/Series/Series';
+import Series from '../Components/Categorias/Series/Series';
 
 export default function Page() {
 	return (

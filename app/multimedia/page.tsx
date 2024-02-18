@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import estilos from './styles/estilos.module.css';
 import '../styles/estilos.css';
+import Link from 'next/link';
 
 export default function Page() {
 	return (
@@ -97,6 +98,7 @@ export default function Page() {
 						</div>
 					</li>
 				</ul>
+				<Link href={'/fetch-page'}>Ir a alla</Link>
 			</aside>
 		</article>
 	);

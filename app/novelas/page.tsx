@@ -1,4 +1,4 @@
-import { Novelas } from '../Components/Categorias/Novelas/Novelas';
+import Novelas from '../Components/Categorias/Novelas/Novelas';
 
 export default function Page() {
 	return (
