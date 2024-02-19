@@ -1,19 +1,25 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+<<<<<<< HEAD
 import estilos from './styles/main_page.module.css';
 import { NavBar } from './UI/NavBar/NavBar';
 import { Footer } from './UI/Footer/Footer';
 import { DataProvider } from './store/DataContext';
+=======
+import { BarraNavegacion } from './UI/BarraNavegacion';
+import estilos from './estilos.module.css';
+import { ContextProvider } from './store/ContextProvider';
+>>>>>>> parent of 53ff688 (Prueba de estilos Mas Vistos)
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Peliculas',
-	description: 'Paginas Web para descargar las peliculas',
+	title: 'Calculadora de Divisas',
+	description: 'Pagina web para calcular las divisas de Cuba',
 	generator: 'Next.js',
 	manifest: '/manifest.json',
-	keywords: ['peliculas'],
+	keywords: ['divisas', 'calculadora de divisas'],
 	authors: [
 		{ name: 'Bryan Espinosa' },
 		{
@@ -40,11 +46,16 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<main className={estilos.Main}>
+<<<<<<< HEAD
 					<DataProvider>
 						<NavBar />
 						{children}
 						<Footer />
 					</DataProvider>
+=======
+					<ContextProvider>{children}</ContextProvider>
+					<BarraNavegacion />
+>>>>>>> parent of 53ff688 (Prueba de estilos Mas Vistos)
 				</main>
 			</body>
 		</html>

@@ -1,0 +1,45 @@
+#page_calculadora,
+#page_factura,
+#page_cambio_informal,
+#page_oculos_reparo {
+  height: 72vh;
+  width: 100%;
+  overflow: overlay;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: white;
+}
+
+#link_tasa_informal {
+  border-radius: 20px 0px 0px 20px;
+}
+
+#link_factura {
+  border-radius: 0px 20px 20px 0px;
+}
+
+#areaImprimir {
+  background: white;
+  width: 400px;
+  height: 631px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dotted black;
+  color: black;
+}
+
+#areaImprimir input {
+  border-bottom: 2px solid black;
+}
+
+#btn_Imprimir {
+  border: #ffbf00 2px solid;
+  padding: 3px;
+  background: black;
+  color: white;
+}
