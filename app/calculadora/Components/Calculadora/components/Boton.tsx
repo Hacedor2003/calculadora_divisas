@@ -1,27 +1,33 @@
-import React from 'react';
 import '../hojas-de-estilo/Boton.css';
 
-function Boton(props: any) {
-	const esOperador = (valor: any) => {
-		return isNaN(valor) && valor != '.' && valor != '=';
+type BotonProps = {
+	children: any;
+	desabilitado: boolean;
+	manejarClic: (valor: any) => void;
+};
+
+const Boton: React.FC<BotonProps> = ({ children, desabilitado, manejarClic }) => {
+	const esOperador = (valor: any): boolean => {
+		return isNaN(valor) && valor !== '.' && valor !== '=';
 	};
-	const esIgual = (valor: boolean) => {
+
+	const esIgual = (valor: boolean): boolean => {
 		return valor === false;
 	};
 
-	const handleClick = (valor: any) => {
-		if (!esIgual(props.desabilitado)) {
-			props.manejarClic(valor);
+	const handleClick = (valor: any): void => {
+		if (!esIgual(desabilitado)) {
+			manejarClic(valor);
 		}
 	};
 
 	return (
 		<div
-			className={`boton-contenedor ${esOperador(props.children) ? 'operador' : ''} ${esIgual(props.desabilitado) ? 'desabilitado' : ''}`.trimEnd()}
-			onClick={() => handleClick(props.children)}>
-			{props.children}
+			className={`boton-contenedor ${esOperador(children) ? 'operador' : ''} ${esIgual(desabilitado) ? 'desabilitado' : ''}`.trimEnd()}
+			onClick={() => handleClick(children)}>
+			{children}
 		</div>
 	);
-}
+};
 
 export default Boton;
