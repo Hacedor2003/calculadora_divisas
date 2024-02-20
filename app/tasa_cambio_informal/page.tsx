@@ -19,7 +19,7 @@ export default function Page() {
 			<section id='container_informal'>
 				<Card
 					dinero={moneda?.cup.usd}
-					image='/usa.webp'
+					image='/usd.webp'
 					moneda='USD'
 					mostrar={true}
 				/>
