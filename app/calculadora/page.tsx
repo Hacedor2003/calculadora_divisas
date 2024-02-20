@@ -33,7 +33,7 @@ export default function Page() {
 					input={input}
 					setInput={setInput}
 					setSelectedMoneda={setSelectedMoneda}
-					desabilitado={desabilitado}
+					deshabilitado={desabilitado}
 				/>
 				<ViewCards
 					input={input}
