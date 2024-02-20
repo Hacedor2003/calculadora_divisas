@@ -8,11 +8,7 @@ import DropdownMenu from './components/MenuDespegable/MenuDespegable';
 
 function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, desabilitado }: { desabilitado: boolean; setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
 	const agregarInput = (val: number) => {
-		if (input === 0) {
-			setInput(val);
-		} else {
-			setInput(input + val);
-		}
+		setInput((prevInput) => (prevInput === 0 ? val : prevInput + val));
 	};
 
 	const calcularResultado = () => {
@@ -24,75 +20,40 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 			alert('Por favor ingrese valores para realizar los cálculos.');
 		}
 	};
+
 	return (
 		<div className='App'>
 			<div className='contenedor-calculadora'>
 				<Pantalla input={input} />
 				<div className='fila'>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						1
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						2
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						3
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						+
-					</Boton>
+					{[1, 2, 3, '+'].map((val) => (
+						<Boton
+							key={val}
+							manejarClic={agregarInput}
+							desabilitado={true}>
+							{val}
+						</Boton>
+					))}
 				</div>
 				<div className='fila'>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						4
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						5
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						6
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						-
-					</Boton>
+					{[4, 5, 6, '-'].map((val) => (
+						<Boton
+							key={val}
+							manejarClic={agregarInput}
+							desabilitado={true}>
+							{val}
+						</Boton>
+					))}
 				</div>
 				<div className='fila'>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						7
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						8
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						9
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						*
-					</Boton>
+					{[7, 8, 9, '*'].map((val) => (
+						<Boton
+							key={val}
+							manejarClic={agregarInput}
+							desabilitado={true}>
+							{val}
+						</Boton>
+					))}
 				</div>
 				<div className='fila'>
 					<Boton
@@ -100,21 +61,14 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 						desabilitado={desabilitado}>
 						=
 					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						0
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						.
-					</Boton>
-					<Boton
-						manejarClic={agregarInput}
-						desabilitado={true}>
-						/
-					</Boton>
+					{[0, '.', '/'].map((val) => (
+						<Boton
+							key={val}
+							manejarClic={agregarInput}
+							desabilitado={true}>
+							{val}
+						</Boton>
+					))}
 				</div>
 				<div className='fila'>
 					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
