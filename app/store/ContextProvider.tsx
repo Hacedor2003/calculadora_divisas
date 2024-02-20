@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useEffect, useState } from 'react';
-import { FetchingApi } from '../Components/FecthingApi';
+import { FetchingApi } from '../Functions/FecthingApi';
 
 type ContextType =
 	| {

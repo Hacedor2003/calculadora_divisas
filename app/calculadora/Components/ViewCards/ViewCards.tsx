@@ -1,6 +1,6 @@
 import { Card } from '@/app/UI/Card';
 import estilos from '../../../estilos.module.css';
-import { SelectedMoneda } from './SelectedMoneda';
+import { SelectedMoneda } from '../../../Functions/SelectedMoneda';
 
 export const ViewCards = ({ watch, setwatch, input, selectedMoneda }: { watch: boolean; setwatch: Function; input: number; selectedMoneda: string }) => {
 	if (!watch || !input || !selectedMoneda) {
@@ -24,8 +24,9 @@ export const ViewCards = ({ watch, setwatch, input, selectedMoneda }: { watch: b
 				<Card
 					key={index}
 					dinero={value}
-					image='/usa.webp'
+					image={`/${tiposMoneda[index]}.webp`}
 					moneda={tiposMoneda[index]}
+					mostrar={false}
 				/>
 			))}
 		</div>

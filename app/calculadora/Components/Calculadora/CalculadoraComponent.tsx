@@ -2,11 +2,12 @@ import './hojas-de-estilo/estilos.css';
 import Boton from './components/Boton';
 import Pantalla from './components/Pantalla';
 import BotonClear from './components/BotonClear';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { evaluate } from 'mathjs';
 import DropdownMenu from './components/MenuDespegable/MenuDespegable';
+import { SelectedMoneda } from '@/app/Functions/SelectedMoneda';
 
-function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda }: { setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
+function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, desabilitado }: { desabilitado: boolean; setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
 	const agregarInput = (val: number) => {
 		if (input === 0) {
 			setInput(val);
@@ -24,7 +25,6 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda }: 
 			alert('Por favor ingrese valores para realizar los cálculos.');
 		}
 	};
-
 	return (
 		<div className='App'>
 			<div className='contenedor-calculadora'>
@@ -48,7 +48,11 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda }: 
 					<Boton manejarClic={agregarInput}>*</Boton>
 				</div>
 				<div className='fila'>
-					<Boton manejarClic={calcularResultado}>=</Boton>
+					<Boton
+						manejarClic={calcularResultado}
+						desabilitado={desabilitado}>
+						=
+					</Boton>
 					<Boton manejarClic={agregarInput}>0</Boton>
 					<Boton manejarClic={agregarInput}>.</Boton>
 					<Boton manejarClic={agregarInput}>/</Boton>

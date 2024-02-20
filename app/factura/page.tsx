@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import estilos from '../estilos.module.css';
 import printDiv from './Components/printDiv';
@@ -51,6 +51,12 @@ export default function Page() {
 		contenedor?.appendChild(inputNumero2);
 		contenedor?.appendChild(inputNumero3);
 	};
+
+	useEffect(() => {
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js').then((registration) => console.log('scope is: ', registration.scope));
+		}
+	}, []);
 
 	return (
 		<>

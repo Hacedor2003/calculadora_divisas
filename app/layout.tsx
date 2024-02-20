@@ -1,16 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-<<<<<<< HEAD
-import estilos from './styles/main_page.module.css';
-import { NavBar } from './UI/NavBar/NavBar';
-import { Footer } from './UI/Footer/Footer';
-import { DataProvider } from './store/DataContext';
-=======
 import { BarraNavegacion } from './UI/BarraNavegacion';
 import estilos from './estilos.module.css';
 import { ContextProvider } from './store/ContextProvider';
->>>>>>> parent of 53ff688 (Prueba de estilos Mas Vistos)
+import { Footer } from './UI/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,16 +40,9 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<main className={estilos.Main}>
-<<<<<<< HEAD
-					<DataProvider>
-						<NavBar />
-						{children}
-						<Footer />
-					</DataProvider>
-=======
 					<ContextProvider>{children}</ContextProvider>
 					<BarraNavegacion />
->>>>>>> parent of 53ff688 (Prueba de estilos Mas Vistos)
+					<Footer />
 				</main>
 			</body>
 		</html>
