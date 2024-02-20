@@ -11,11 +11,11 @@ export const SelectedMoneda = (monedaSeleccionada: string, valor: number | null)
 		switch (monedaSeleccionada) {
 			case 'CUP':
 				valores = [(valor ? valor / moneda?.cup.usd : 0).toFixed(2), (valor ? valor / moneda?.cup.euro : 0).toFixed(2), (valor ? valor / moneda?.cup.mlc : 0).toFixed(2)];
-				tiposMoneda = ['USD', 'EUROS', 'MLC'];
+				tiposMoneda = ['USD', 'EURO', 'MLC'];
 				break;
 			case 'USD':
 				valores = [(valor ? valor * moneda?.usd : 0).toFixed(2), (valor ? (valor * moneda?.usd) / moneda?.euro : 0).toFixed(2), (valor ? (valor * moneda?.usd) / moneda?.mlc : 0).toFixed(2)];
-				tiposMoneda = ['CUP', 'EUROS', 'MLC'];
+				tiposMoneda = ['CUP', 'EURO', 'MLC'];
 				break;
 			case 'EURO':
 				valores = [(valor ? valor * moneda?.euro : 0).toFixed(2), (valor ? (valor * moneda?.euro) / moneda?.usd : 0).toFixed(2), (valor ? (valor * moneda?.euro) / moneda?.mlc : 0).toFixed(2)];
@@ -23,7 +23,7 @@ export const SelectedMoneda = (monedaSeleccionada: string, valor: number | null)
 				break;
 			case 'MLC':
 				valores = [(valor ? valor * moneda?.mlc : 0).toFixed(2), (valor ? (valor * moneda?.mlc) / moneda?.euro : 0).toFixed(2), (valor ? (valor * moneda?.mlc) / moneda?.usd : 0).toFixed(2)];
-				tiposMoneda = ['CUP', 'EUROS', 'USD'];
+				tiposMoneda = ['CUP', 'EURO', 'USD'];
 				break;
 		}
 	}

@@ -5,15 +5,12 @@ import estilos from '../estilos.module.css';
 
 export const Footer = () => {
 	const moneda = useContext(ContextData);
-	const [content, setcontent] = useState('');
+	const [content, setContent] = useState('');
 
 	useEffect(() => {
-		if (moneda?.status === 'Network Error' || moneda === undefined) {
-			setcontent('Error 404 , no internet');
-		} else {
-			setcontent('');
-		}
-	}, [moneda]);
+		const isOnline = window.navigator.onLine;
+		setContent(isOnline ? '' : 'Error 404, no hay conexión a internet');
+	}, []);
 
 	return <footer className={estilos.Header}>{content}</footer>;
 };

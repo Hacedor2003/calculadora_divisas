@@ -22,12 +22,12 @@ const DropdownMenu = ({ setSelectedMoneda }: { setSelectedMoneda: Function }) =>
 				Moneda
 			</button>
 			{isOpen && (
-				<div className={styles.dropdownContent}>
-					<p onClick={() => handleMonedaSelection('USD')}>USD</p>
-					<p onClick={() => handleMonedaSelection('MLC')}>MLC</p>
-					<p onClick={() => handleMonedaSelection('EURO')}>EURO</p>
-					<p onClick={() => handleMonedaSelection('CUP')}>CUP</p>
-				</div>
+				<ul className={styles.dropdownContent}>
+					<li onClick={() => handleMonedaSelection('USD')}>USD</li>
+					<li onClick={() => handleMonedaSelection('MLC')}>MLC</li>
+					<li onClick={() => handleMonedaSelection('EURO')}>EURO</li>
+					<li onClick={() => handleMonedaSelection('CUP')}>CUP</li>
+				</ul>
 			)}
 		</div>
 	);

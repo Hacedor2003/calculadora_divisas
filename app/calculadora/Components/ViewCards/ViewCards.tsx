@@ -24,7 +24,7 @@ export const ViewCards = ({ watch, setwatch, input, selectedMoneda }: { watch: b
 				<Card
 					key={index}
 					dinero={value}
-					image={`/${tiposMoneda[index]}.webp`}
+					image={`/${tiposMoneda[index].toLocaleLowerCase()}.webp`}
 					moneda={tiposMoneda[index]}
 					mostrar={false}
 				/>
