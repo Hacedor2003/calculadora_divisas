@@ -30,22 +30,70 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 			<div className='contenedor-calculadora'>
 				<Pantalla input={input} />
 				<div className='fila'>
-					<Boton manejarClic={agregarInput}>1</Boton>
-					<Boton manejarClic={agregarInput}>2</Boton>
-					<Boton manejarClic={agregarInput}>3</Boton>
-					<Boton manejarClic={agregarInput}>+</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						1
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						2
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						3
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						+
+					</Boton>
 				</div>
 				<div className='fila'>
-					<Boton manejarClic={agregarInput}>4</Boton>
-					<Boton manejarClic={agregarInput}>5</Boton>
-					<Boton manejarClic={agregarInput}>6</Boton>
-					<Boton manejarClic={agregarInput}>-</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						4
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						5
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						6
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						-
+					</Boton>
 				</div>
 				<div className='fila'>
-					<Boton manejarClic={agregarInput}>7</Boton>
-					<Boton manejarClic={agregarInput}>8</Boton>
-					<Boton manejarClic={agregarInput}>9</Boton>
-					<Boton manejarClic={agregarInput}>*</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						7
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						8
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						9
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						*
+					</Boton>
 				</div>
 				<div className='fila'>
 					<Boton
@@ -53,9 +101,21 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 						desabilitado={desabilitado}>
 						=
 					</Boton>
-					<Boton manejarClic={agregarInput}>0</Boton>
-					<Boton manejarClic={agregarInput}>.</Boton>
-					<Boton manejarClic={agregarInput}>/</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						0
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						.
+					</Boton>
+					<Boton
+						manejarClic={agregarInput}
+						desabilitado={true}>
+						/
+					</Boton>
 				</div>
 				<div className='fila'>
 					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
