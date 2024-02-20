@@ -12,6 +12,7 @@
   border: 2px solid white;
   margin: 4px;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 

@@ -4,7 +4,7 @@ import '../hojas-de-estilo/Boton.css';
 type BotonProps = {
 	children: string | number;
 	deshabilitado: boolean;
-	manejarClic: (valor: string | number) => void;
+	manejarClic: (valor: number) => void;
 };
 
 const Boton: React.FC<BotonProps> = ({ children, deshabilitado, manejarClic }) => {

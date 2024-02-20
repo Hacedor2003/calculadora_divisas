@@ -6,7 +6,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { evaluate } from 'mathjs';
 import DropdownMenu from './components/MenuDespegable/MenuDespegable';
 
-function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, desabilitado }: { desabilitado: boolean; setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
+function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, deshabilitado }: { deshabilitado: boolean; setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
 	const agregarInput = (val: number) => {
 		setInput((prevInput) => (prevInput === 0 ? val : prevInput + val));
 	};
@@ -30,7 +30,7 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 						<Boton
 							key={val}
 							manejarClic={agregarInput}
-							desabilitado={true}>
+							deshabilitado={true}>
 							{val}
 						</Boton>
 					))}
@@ -40,7 +40,7 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 						<Boton
 							key={val}
 							manejarClic={agregarInput}
-							desabilitado={true}>
+							deshabilitado={true}>
 							{val}
 						</Boton>
 					))}
@@ -50,7 +50,7 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 						<Boton
 							key={val}
 							manejarClic={agregarInput}
-							desabilitado={true}>
+							deshabilitado={true}>
 							{val}
 						</Boton>
 					))}
@@ -58,14 +58,14 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 				<div className='fila'>
 					<Boton
 						manejarClic={calcularResultado}
-						desabilitado={desabilitado}>
+						deshabilitado={deshabilitado}>
 						=
 					</Boton>
 					{[0, '.', '/'].map((val) => (
 						<Boton
 							key={val}
 							manejarClic={agregarInput}
-							desabilitado={true}>
+							deshabilitado={true}>
 							{val}
 						</Boton>
 					))}
