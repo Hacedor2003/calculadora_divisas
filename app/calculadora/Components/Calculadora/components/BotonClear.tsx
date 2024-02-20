@@ -1,3 +1,4 @@
+import React from 'react';
 import '../hojas-de-estilo/BotonClear.css';
 
 type BotonClearProps = {

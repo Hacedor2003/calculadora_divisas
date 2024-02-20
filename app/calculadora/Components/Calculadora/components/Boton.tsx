@@ -1,29 +1,30 @@
+import React from 'react';
 import '../hojas-de-estilo/Boton.css';
 
 type BotonProps = {
-	children: any;
-	desabilitado: boolean;
-	manejarClic: (valor: any) => void;
+	children: string | number;
+	deshabilitado: boolean;
+	manejarClic: (valor: string | number) => void;
 };
 
-const Boton: React.FC<BotonProps> = ({ children, desabilitado, manejarClic }) => {
-	const esOperador = (valor: any): boolean => {
-		return isNaN(valor) && valor !== '.' && valor !== '=';
+const Boton: React.FC<BotonProps> = ({ children, deshabilitado, manejarClic }) => {
+	const esOperador = (valor: string | number): boolean => {
+		return isNaN(Number(valor)) && valor !== '.' && valor !== '=';
 	};
 
-	const esIgual = (valor: boolean): boolean => {
-		return valor === false;
+	const esDiferenteDeFalse = (valor: boolean): boolean => {
+		return valor !== false;
 	};
 
-	const handleClick = (valor: any): void => {
-		if (!esIgual(desabilitado)) {
+	const handleClick = (valor: string | number): void => {
+		if (esDiferenteDeFalse(deshabilitado)) {
 			manejarClic(valor);
 		}
 	};
 
 	return (
 		<div
-			className={`boton-contenedor ${esOperador(children) ? 'operador' : ''} ${esIgual(desabilitado) ? 'desabilitado' : ''}`.trimEnd()}
+			className={`boton-contenedor ${esOperador(children) ? 'operador' : ''} ${!esDiferenteDeFalse(deshabilitado) ? 'deshabilitado' : ''}`.trimEnd()}
 			onClick={() => handleClick(children)}>
 			{children}
 		</div>

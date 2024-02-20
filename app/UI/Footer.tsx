@@ -1,10 +1,8 @@
 'use client';
-import { useContext, useEffect, useState } from 'react';
-import { ContextData } from '../store/ContextProvider';
+import { useEffect, useState } from 'react';
 import estilos from '../estilos.module.css';
 
 export const Footer = () => {
-	const moneda = useContext(ContextData);
 	const [content, setContent] = useState('');
 
 	useEffect(() => {

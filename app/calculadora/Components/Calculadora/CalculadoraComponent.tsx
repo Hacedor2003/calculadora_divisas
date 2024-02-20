@@ -2,10 +2,9 @@ import './hojas-de-estilo/estilos.css';
 import Boton from './components/Boton';
 import Pantalla from './components/Pantalla';
 import BotonClear from './components/BotonClear';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { evaluate } from 'mathjs';
 import DropdownMenu from './components/MenuDespegable/MenuDespegable';
-import { SelectedMoneda } from '@/app/Functions/SelectedMoneda';
 
 function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, desabilitado }: { desabilitado: boolean; setWatch: Dispatch<SetStateAction<boolean>>; input: number; setInput: Dispatch<SetStateAction<number>>; setSelectedMoneda: Function }) {
 	const agregarInput = (val: number) => {

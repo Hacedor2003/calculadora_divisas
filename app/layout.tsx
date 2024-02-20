@@ -5,6 +5,7 @@ import { BarraNavegacion } from './UI/BarraNavegacion';
 import estilos from './estilos.module.css';
 import { ContextProvider } from './store/ContextProvider';
 import { Footer } from './UI/Footer';
+import React from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
