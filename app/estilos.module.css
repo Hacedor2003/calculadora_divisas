@@ -196,8 +196,8 @@
 }
 
 
-.contenedor_imprimir>p {
-  margin: 2px;
+.contenedor_imprimir>div {
+  margin: 5px;
 }
 
 .contenedor_imprimir>img {
@@ -205,7 +205,7 @@
   height: 100px;
 }
 
-.contenedor_imprimir>p>input {
+.contenedor_imprimir>div>input {
   padding: 5px;
   font-size: 18px;
 }

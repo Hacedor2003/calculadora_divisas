@@ -91,15 +91,11 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 					<Boton
 						manejarClic={agregarInput}
 						deshabilitado={true}>
-						*
+						X
 					</Boton>
 				</div>
 				<div className='fila'>
-					<Boton
-						manejarClic={calcularResultado}
-						deshabilitado={deshabilitado}>
-						=
-					</Boton>
+					<BotonClear manejarClear={() => setInput(0)}>C</BotonClear>
 					<Boton
 						manejarClic={agregarInput}
 						deshabilitado={true}>
@@ -117,7 +113,11 @@ function CalculadoraComponent({ setWatch, input, setInput, setSelectedMoneda, de
 					</Boton>
 				</div>
 				<div className='fila'>
-					<BotonClear manejarClear={() => setInput(0)}>Clear</BotonClear>
+					<Boton
+						manejarClic={calcularResultado}
+						deshabilitado={deshabilitado}>
+						=
+					</Boton>
 					<DropdownMenu setSelectedMoneda={setSelectedMoneda} />
 				</div>
 			</div>

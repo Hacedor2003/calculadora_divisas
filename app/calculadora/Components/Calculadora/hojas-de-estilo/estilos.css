@@ -1,20 +1,21 @@
 .App {
-  font-family: Lato, sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+	font-family: Lato, sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
 .contenedor-calculadora {
-  width: 400px;
-  height: 422px;
+	width: 400px;
+	height: 422px;
 }
 
 .fila {
-  margin: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	margin: 4px;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }

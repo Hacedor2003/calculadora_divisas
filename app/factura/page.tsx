@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import estilos from '../estilos.module.css';
 import printDiv from './Components/printDiv';
+import DropdownMenuFactura from './Components/MenuDespegableFactura';
 
 export default function Page() {
 	const [formValues, setFormValues] = useState({
@@ -70,7 +70,7 @@ export default function Page() {
 							height={100}
 						/>
 					</aside>
-					<p>
+					<div>
 						<input
 							type='text'
 							name='nombre'
@@ -86,8 +86,8 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Numero de Telefono'
 						/>
-					</p>
-					<p>
+					</div>
+					<div>
 						<input
 							type='datetime-local'
 							name='fechaHora'
@@ -95,23 +95,23 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Fecha/Hora'
 						/>
-					</p>
+					</div>
 					<section
 						id='contenedor_listas_producto'
 						className={estilos.contenedor_producto}>
-						<p>
+						<div>
 							Producto{' '}
 							<button
 								type='button'
 								onClick={agregarProducto}>
 								+
 							</button>
-						</p>
+						</div>
 						<p>Cantidad</p>
 						<p>Precio</p>
 						<p>Debe</p>
 					</section>
-					<p>
+					<div>
 						Total:
 						<input
 							type='number'
@@ -120,8 +120,8 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Total'
 						/>
-					</p>
-					<p>
+					</div>
+					<div>
 						Sub Total:
 						<input
 							type='number'
@@ -130,8 +130,8 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Sub Total'
 						/>
-					</p>
-					<p>
+					</div>
+					<div>
 						Pago Efectuado:
 						<input
 							type='number'
@@ -140,8 +140,8 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Pago Efectuado'
 						/>
-					</p>
-					<p>
+					</div>
+					<div>
 						Debe:
 						<input
 							type='number'
@@ -150,17 +150,11 @@ export default function Page() {
 							onChange={handleChange}
 							placeholder='Debe'
 						/>
-					</p>
-					<p>
+					</div>
+					<div>
 						Metodo de Pago:
-						<input
-							type='text'
-							name='metodoPago'
-							value={metodoPago}
-							onChange={handleChange}
-							placeholder='Metodo de Pago'
-						/>
-					</p>
+						<DropdownMenuFactura/>
+					</div>
 					<p>Gracias por preferirnos, vuelva pronto</p>
 				</div>
 			</div>
