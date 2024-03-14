@@ -77,8 +77,7 @@ export default function Page() {
 							value={nombre}
 							onChange={handleChange}
 							placeholder='Nombre'
-						/>{' '}
-						:
+						/>
 						<input
 							type='number'
 							name='telefono'
