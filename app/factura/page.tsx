@@ -6,20 +6,21 @@ import DropdownMenuFactura from './Components/MenuDespegableFactura';
 
 export default function Page() {
 	const [formValues, setFormValues] = useState({
-		nombre: '',
-		telefono: '',
-		fechaHora: '',
-		total: '',
-		subTotal: '',
-		pagoEfectuado: '',
-		debe: '',
-		metodoPago: '',
+		nombre: localStorage.getItem('nombre') ? localStorage.getItem('nombre') : '',
+		telefono: localStorage.getItem('telefono') ? localStorage.getItem('telefono') : '',
+		fechaHora: localStorage.getItem('fechaHora') ? localStorage.getItem('fechaHora') : '',
+		total: localStorage.getItem('total') ? localStorage.getItem('total') : '',
+		subTotal: localStorage.getItem('subTotal') ? localStorage.getItem('subTotal') : '',
+		pagoEfectuado: localStorage.getItem('pagoEfectuado') ? localStorage.getItem('pagoEfectuado') : '',
+		debe: localStorage.getItem('debe') ? localStorage.getItem('debe') : '',
+		metodoPago: localStorage.getItem('metodoPago') ? localStorage.getItem('metodoPago') : '',
 	});
 
 	const { nombre, telefono, fechaHora, total, subTotal, pagoEfectuado, debe, metodoPago } = formValues;
 
 	const handleChange = (e: any) => {
 		const { name, value } = e.target;
+		localStorage.setItem(name, value);
 		setFormValues({ ...formValues, [name]: value });
 	};
 
@@ -74,14 +75,14 @@ export default function Page() {
 						<input
 							type='text'
 							name='nombre'
-							value={nombre}
+							value={nombre ? nombre : ''}
 							onChange={handleChange}
 							placeholder='Nombre'
 						/>
 						<input
 							type='number'
 							name='telefono'
-							value={telefono}
+							value={telefono ? telefono : ''}
 							onChange={handleChange}
 							placeholder='Numero de Telefono'
 						/>
@@ -90,7 +91,7 @@ export default function Page() {
 						<input
 							type='datetime-local'
 							name='fechaHora'
-							value={fechaHora}
+							value={fechaHora ? fechaHora : ''}
 							onChange={handleChange}
 							placeholder='Fecha/Hora'
 						/>
@@ -115,7 +116,7 @@ export default function Page() {
 						<input
 							type='number'
 							name='total'
-							value={total}
+							value={total ? total : ''}
 							onChange={handleChange}
 							placeholder='Total'
 						/>
@@ -125,7 +126,7 @@ export default function Page() {
 						<input
 							type='number'
 							name='subTotal'
-							value={subTotal}
+							value={subTotal ? subTotal : ''}
 							onChange={handleChange}
 							placeholder='Sub Total'
 						/>
@@ -135,7 +136,7 @@ export default function Page() {
 						<input
 							type='number'
 							name='pagoEfectuado'
-							value={pagoEfectuado}
+							value={pagoEfectuado ? pagoEfectuado : ''}
 							onChange={handleChange}
 							placeholder='Pago Efectuado'
 						/>
@@ -145,14 +146,14 @@ export default function Page() {
 						<input
 							type='number'
 							name='debe'
-							value={debe}
+							value={debe ? debe : ''}
 							onChange={handleChange}
 							placeholder='Debe'
 						/>
 					</div>
 					<div>
 						Metodo de Pago:
-						<DropdownMenuFactura/>
+						<DropdownMenuFactura />
 					</div>
 					<p>Gracias por preferirnos, vuelva pronto</p>
 				</div>
@@ -161,7 +162,7 @@ export default function Page() {
 				type='button'
 				id='btn_Imprimir'
 				disabled={!isFormComplete}
-				onClick={() => printDiv('areaImprimir', nombre)}
+				onClick={() => printDiv('areaImprimir', nombre ? nombre : '')}
 				value='Imprimir'
 			/>
 		</>
