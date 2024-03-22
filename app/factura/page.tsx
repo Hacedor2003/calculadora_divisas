@@ -6,21 +6,21 @@ import DropdownMenuFactura from './Components/MenuDespegableFactura';
 
 export default function Page() {
 	const [formValues, setFormValues] = useState({
-		nombre: typeof window !== 'undefined' ? (localStorage.getItem('nombre') ? localStorage.getItem('nombre') : '') : '',
-		telefono: typeof window !== 'undefined' ? (localStorage.getItem('telefono') ? localStorage.getItem('telefono') : '') : '',
-		fechaHora: localStorage.getItem('fechaHora') ? localStorage.getItem('fechaHora') : '',
-		total: typeof window !== 'undefined' ? (localStorage.getItem('total') ? localStorage.getItem('total') : '') : '',
-		subTotal: typeof window !== 'undefined' ? (localStorage.getItem('subTotal') ? localStorage.getItem('subTotal') : '') : '',
-		pagoEfectuado: typeof window !== 'undefined' ? (localStorage.getItem('pagoEfectuado') ? localStorage.getItem('pagoEfectuado') : '') : '',
-		debe: typeof window !== 'undefined' ? (localStorage.getItem('debe') ? localStorage.getItem('debe') : '') : '',
-		metodoPago: typeof window !== 'undefined' ? (localStorage.getItem('metodoPago') ? localStorage.getItem('metodoPago') : '') : '',
+		nombre: sessionStorage.getItem('nombre') ? sessionStorage.getItem('nombre') : '',
+		telefono: sessionStorage.getItem('telefono') ? sessionStorage.getItem('telefono') : '',
+		fechaHora: sessionStorage.getItem('fechaHora') ? sessionStorage.getItem('fechaHora') : '',
+		total: sessionStorage.getItem('total') ? sessionStorage.getItem('total') : '',
+		subTotal: sessionStorage.getItem('subTotal') ? sessionStorage.getItem('subTotal') : '',
+		pagoEfectuado: sessionStorage.getItem('pagoEfectuado') ? sessionStorage.getItem('pagoEfectuado') : '',
+		debe: sessionStorage.getItem('debe') ? sessionStorage.getItem('debe') : '',
+		metodoPago: sessionStorage.getItem('metodoPago') ? sessionStorage.getItem('metodoPago') : '',
 	});
 
 	const { nombre, telefono, fechaHora, total, subTotal, pagoEfectuado, debe, metodoPago } = formValues;
 
 	const handleChange = (e: any) => {
 		const { name, value } = e.target;
-		localStorage.setItem(name, value);
+		sessionStorage.setItem(name, value);
 		setFormValues({ ...formValues, [name]: value });
 	};
 
