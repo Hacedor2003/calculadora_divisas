@@ -6,14 +6,14 @@ import DropdownMenuFactura from './Components/MenuDespegableFactura';
 
 export default function Page() {
 	const [formValues, setFormValues] = useState({
-		nombre: localStorage.getItem('nombre') ? localStorage.getItem('nombre') : '',
-		telefono: localStorage.getItem('telefono') ? localStorage.getItem('telefono') : '',
+		nombre: typeof window !== 'undefined' ? (localStorage.getItem('nombre') ? localStorage.getItem('nombre') : '') : '',
+		telefono: typeof window !== 'undefined' ? (localStorage.getItem('telefono') ? localStorage.getItem('telefono') : '') : '',
 		fechaHora: localStorage.getItem('fechaHora') ? localStorage.getItem('fechaHora') : '',
-		total: localStorage.getItem('total') ? localStorage.getItem('total') : '',
-		subTotal: localStorage.getItem('subTotal') ? localStorage.getItem('subTotal') : '',
-		pagoEfectuado: localStorage.getItem('pagoEfectuado') ? localStorage.getItem('pagoEfectuado') : '',
-		debe: localStorage.getItem('debe') ? localStorage.getItem('debe') : '',
-		metodoPago: localStorage.getItem('metodoPago') ? localStorage.getItem('metodoPago') : '',
+		total: typeof window !== 'undefined' ? (localStorage.getItem('total') ? localStorage.getItem('total') : '') : '',
+		subTotal: typeof window !== 'undefined' ? (localStorage.getItem('subTotal') ? localStorage.getItem('subTotal') : '') : '',
+		pagoEfectuado: typeof window !== 'undefined' ? (localStorage.getItem('pagoEfectuado') ? localStorage.getItem('pagoEfectuado') : '') : '',
+		debe: typeof window !== 'undefined' ? (localStorage.getItem('debe') ? localStorage.getItem('debe') : '') : '',
+		metodoPago: typeof window !== 'undefined' ? (localStorage.getItem('metodoPago') ? localStorage.getItem('metodoPago') : '') : '',
 	});
 
 	const { nombre, telefono, fechaHora, total, subTotal, pagoEfectuado, debe, metodoPago } = formValues;
